@@ -19,6 +19,7 @@ from app.core.time import get_local_date_for_user
 from app.learning.evaluator import SessionEvaluator
 from app.learning.schemas import (
     EvaluationRequest as EvaluatorRequest,
+    ScenarioTargets as EvaluatorTargets,
 )
 from app.learning.schemas import TranscriptTurn as EvaluatorTurn
 from app.models.gamification import DailyQuest, UserBadge
@@ -204,6 +205,10 @@ class SessionService:
                             for turn in payload.transcript
                         ],
                         duration_seconds=float(payload.duration_seconds),
+                        scenario_targets=EvaluatorTargets(
+                            vocabulary=list(scenario.vocabulary_targets or []),
+                            grammar=list(scenario.grammar_targets or []),
+                        ),
                     )
                 )
                 if (
@@ -321,6 +326,10 @@ class SessionService:
             )
 
         await self._db.flush()
+        if xp_eligible:
+            await self._record_unit_speaking_evidence(
+                locked_user, payload, scenario
+            )
 
         xp_award = gamification.build_xp_award(
             locked_user, session_xp, quest_xp
@@ -493,6 +502,39 @@ class SessionService:
             quests=[self._quest_out(quest) for quest in quests],
             newly_awarded_badges=[],
             completed_at=existing.created_at,
+        )
+
+    async def _record_unit_speaking_evidence(
+        self,
+        user: User,
+        payload: SessionCompleteRequest,
+        scenario: Scenario,
+    ) -> None:
+        """C13: unit-bound sessions write speaking evidence + completion."""
+        from app.services.content_service import get_scenario_seed_by_id
+        from app.services.evidence_service import (
+            ACTIVITY_SPEAKING_SESSION,
+            record_speaking_practice,
+        )
+
+        seed = get_scenario_seed_by_id(scenario.id)
+        if seed is None or not seed.unit_id:
+            return
+        await record_speaking_practice(
+            self._db,
+            user_id=user.id,
+            unit_code=seed.unit_id,
+            content_id=seed.content_id,
+            activity_type=ACTIVITY_SPEAKING_SESSION,
+            score=float(payload.evaluation.overall_score),
+            result_json={
+                "overall_score": payload.evaluation.overall_score,
+                "scenario_id": str(scenario.id),
+                "client_session_id": str(payload.client_session_id),
+                "vocabulary_targets": list(scenario.vocabulary_targets or []),
+            },
+            sonolo_level=scenario.sonolo_level if scenario.sonolo_level is not None else seed.sonolo_level,
+            fingerprint=str(payload.client_session_id),
         )
 
     @staticmethod

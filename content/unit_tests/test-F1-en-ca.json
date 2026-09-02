@@ -1,0 +1,70 @@
+{
+  "id": "test-F1",
+  "unit_id": "F1",
+  "type": "unit_test",
+  "language": "en-CA",
+  "level": 1,
+  "time_limit_minutes": 15,
+  "is_published": true,
+  "pass_criteria": {
+    "overall_minimum": 70,
+    "per_skill_minimum": 60
+  },
+  "sections": {
+    "listening": {
+      "weight": 0.25,
+      "title": "Gate change announcement",
+      "prompt": "A new Pearson gate announcement — not the practice audio.",
+      "questions": [
+        {"id": "test-F1-listen-q1", "type": "multiple_choice", "question": "Which gate is open now?", "options": ["Gate A2", "Gate C7", "Door 3", "Terminal 3"], "correct_answer": 1},
+        {"id": "test-F1-listen-q2", "type": "multiple_choice", "question": "What should travellers have ready?", "options": ["A lease", "Their passport", "A roommate", "A deposit"], "correct_answer": 1},
+        {"id": "test-F1-listen-q3", "type": "multiple_choice", "question": "Where do taxis wait?", "options": ["At customs", "Outside arrivals", "At the kitchen", "On the flight"], "correct_answer": 1},
+        {"id": "test-F1-listen-q4", "type": "true_false", "question": "The flight is at Gate C7.", "options": ["True", "False"], "correct_answer": 0},
+        {"id": "test-F1-listen-q5", "type": "dictation", "question": "Type the sentence about the passport.", "correct_answer": "Please have your passport ready."}
+      ]
+    },
+    "reading": {
+      "weight": 0.25,
+      "title": "Welcome desk note",
+      "text_content": "Pearson Welcome Desk — Arrivals\n\nShow your passport and ticket. Taxis wait outside Door 4, not Door 3 today.\nThe customs officer may ask for your form and your address in Canada.\nLuggage carts are free. The terminal closes the welcome desk at 11 pm.\nLost? Ask at the desk. Write your gate number on this paper.",
+      "questions": [
+        {"id": "test-F1-read-q1", "type": "multiple_choice", "question": "Which door has taxis today?", "options": ["Door 3", "Door 4", "Gate C7", "Customs"], "correct_answer": 1},
+        {"id": "test-F1-read-q2", "type": "multiple_choice", "question": "When does the welcome desk close?", "options": ["9 pm", "11 pm", "6 am", "Noon"], "correct_answer": 1},
+        {"id": "test-F1-read-q3", "type": "multiple_choice", "question": "What may the officer ask for?", "options": ["A lease", "Your form and address", "A roommate", "A viewing"], "correct_answer": 1},
+        {"id": "test-F1-read-q4", "type": "fill_blank", "question": "Luggage carts are ____.", "correct_answer": "free", "accepted_answers": ["Free"]},
+        {"id": "test-F1-read-q5", "type": "vocabulary_hunt", "question": "Find these words in the note.", "target_words": ["passport", "ticket", "customs", "address", "gate"]}
+      ]
+    },
+    "speaking": {
+      "weight": 0.30,
+      "task": {
+        "id": "test-F1-speak-1",
+        "prompt": "You are at Pearson. Ask for a taxi and give your address.",
+        "duration_seconds": 120,
+        "vocabulary_targets": ["taxi", "address", "please", "Pearson", "passport"]
+      }
+    },
+    "writing": {
+      "weight": 0.20,
+      "tasks": [
+        {
+          "id": "test-F1-write-1",
+          "type": "articles",
+          "prompt": "Complete each sentence with a, an, or the.",
+          "items": [
+            {"id": "a1", "sentence": "I need ___ taxi.", "correct": "a"},
+            {"id": "a2", "sentence": "Where is ___ officer?", "correct": "the"},
+            {"id": "a3", "sentence": "This is ___ arrival form.", "correct": "an"}
+          ]
+        },
+        {
+          "id": "test-F1-write-2",
+          "type": "short_message",
+          "prompt": "Write a 3-sentence message: your name, you landed, and your address.",
+          "min_sentences": 3,
+          "keywords": ["name", "Pearson", "address"]
+        }
+      ]
+    }
+  }
+}

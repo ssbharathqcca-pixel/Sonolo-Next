@@ -1,0 +1,36 @@
+{
+  "id": "grammar-F2-there-is",
+  "unit_id": "F2",
+  "type": "grammar_spotlight",
+  "language": "en-CA",
+  "level": 1,
+  "title": "There is, I need, and questions",
+  "read_minutes": 3,
+  "grammar_targets": [
+    "There is / There are",
+    "I need / I want",
+    "Present simple questions"
+  ],
+  "explanation": "When you hunt for an apartment, you describe rooms with There is / There are, you say I need or I want, and you ask present simple questions.",
+  "sections": [
+    {
+      "heading": "There is / There are",
+      "text": "There is a bedroom. There is a kitchen. There are two windows. Use is for one thing and are for more than one."
+    },
+    {
+      "heading": "I need / I want",
+      "text": "I need an apartment downtown. I want a viewing on Saturday. Need is stronger than want."
+    },
+    {
+      "heading": "Present simple questions",
+      "text": "Is there a kitchen? What is the rent? Can I have a viewing? Keep questions short."
+    }
+  ],
+  "examples": [
+    {"prompt": "There ____ a kitchen.", "answer": "is", "note": "one kitchen"},
+    {"prompt": "I ____ a bedroom.", "answer": "need", "note": "I need"},
+    {"prompt": "____ there a roommate?", "answer": "Is", "note": "present simple question"}
+  ],
+  "try_it": "Call a landlord and say: I need a bedroom. Is there a kitchen? What is the rent?",
+  "is_published": true
+}

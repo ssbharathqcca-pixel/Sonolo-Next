@@ -1,0 +1,80 @@
+{
+  "id": "F2",
+  "band": "foundation",
+  "level_target": 1,
+  "sort_order": 2,
+  "language": "en-CA",
+  "title": "Finding Home",
+  "story_chapter": "The apartment hunt",
+  "theme": "housing",
+  "icon": "🏠",
+  "vocabulary_targets": [
+    "apartment",
+    "rent",
+    "lease",
+    "landlord",
+    "bedroom",
+    "kitchen",
+    "roommate",
+    "deposit",
+    "listing",
+    "utilities",
+    "available",
+    "downtown",
+    "viewing",
+    "inquiry",
+    "notice"
+  ],
+  "grammar_targets": [
+    "There is / There are",
+    "I need / I want",
+    "Present simple questions"
+  ],
+  "cultural_context": "Newcomers often share a first apartment. Listings show rent, bedrooms, and whether utilities are included. You email the landlord, visit for a viewing, then sign a lease.",
+  "vocab_primer_ids": [
+    "vocab-F2-apartment",
+    "vocab-F2-rent",
+    "vocab-F2-lease",
+    "vocab-F2-landlord",
+    "vocab-F2-bedroom",
+    "vocab-F2-kitchen",
+    "vocab-F2-roommate",
+    "vocab-F2-deposit",
+    "vocab-F2-listing",
+    "vocab-F2-utilities",
+    "vocab-F2-available",
+    "vocab-F2-downtown",
+    "vocab-F2-viewing",
+    "vocab-F2-inquiry",
+    "vocab-F2-notice"
+  ],
+  "listening_ids": [
+    "listen-F2-voicemail",
+    "listen-F2-roommate",
+    "listen-F2-viewing"
+  ],
+  "reading_ids": [
+    "reading-F2-listing",
+    "reading-F2-lease"
+  ],
+  "reading_required_activities": [
+    {"id": "reading-F2-listing", "type": "reading_exercise"},
+    {"id": "reading-F2-lease", "type": "reading_exercise"},
+    {"id": "hunt-F2-listing", "type": "vocabulary_hunt"}
+  ],
+  "reading_optional_activities": [],
+  "speaking_ids": [
+    "speak-F2-landlord",
+    "speak-F2-sprint",
+    "pron-F2-home"
+  ],
+  "writing_ids": [
+    "writing-F2-sentence-builder",
+    "writing-F2-inquiry",
+    "writing-F2-error-fix"
+  ],
+  "grammar_spotlight_id": "grammar-F2-there-is",
+  "unit_test_id": "test-F2",
+  "prerequisites": ["F1"],
+  "is_published": true
+}

@@ -618,6 +618,121 @@ export async function fetchEntitlements(): Promise<Entitlements> {
 }
 
 // ---------------------------------------------------------------------
+// Journey Map (C8)
+// ---------------------------------------------------------------------
+
+export type JourneyBandStatus = "locked" | "active" | "completed";
+export type JourneyUnitStatus = "locked" | "current" | "completed";
+export type JourneySkillStatus =
+  | "locked"
+  | "complete"
+  | "in_progress"
+  | "not_started";
+
+export interface JourneySkill {
+  skill: string;
+  status: JourneySkillStatus;
+}
+
+export interface JourneyUnit {
+  id: string;
+  title: string;
+  status: JourneyUnitStatus;
+  skills: JourneySkill[];
+}
+
+export interface JourneyBand {
+  id: string;
+  title: string;
+  subtitle: string;
+  icon: string;
+  status: JourneyBandStatus;
+  expanded: boolean;
+  unlock_condition: string | null;
+  units: JourneyUnit[];
+}
+
+export interface JourneyMapData {
+  current_unit_id: string | null;
+  bands: JourneyBand[];
+}
+
+/** GET /learn/journey — band/unit map from C0 unit progress. */
+export async function fetchJourney(): Promise<JourneyMapData> {
+  const { data } = await api.get<JourneyMapData>("/learn/journey");
+  return data;
+}
+
+// ---------------------------------------------------------------------
+// Unit catalog (C1) — used by C10 Unit Detail
+// ---------------------------------------------------------------------
+
+export interface UnitReadingActivity {
+  id: string;
+  type: string;
+}
+
+export interface UnitDetail {
+  id: string;
+  band: string;
+  title: string;
+  story_chapter: string;
+  theme: string;
+  icon: string;
+  level_target: number;
+  language: string;
+  vocabulary_targets: string[];
+  grammar_targets: string[];
+  reading_ids: string[];
+  writing_ids: string[];
+  listening_ids: string[];
+  speaking_ids: string[];
+  reading_required_activities: UnitReadingActivity[];
+  reading_optional_activities: UnitReadingActivity[];
+  unit_test_id: string | null;
+  is_published: boolean;
+}
+
+/** GET /learn/units/{code} — published unit catalog (C1). */
+export async function fetchUnit(unitCode: string): Promise<UnitDetail> {
+  const { data } = await api.get<UnitDetail>(
+    `/learn/units/${encodeURIComponent(unitCode)}`,
+  );
+  return data;
+}
+
+// ---------------------------------------------------------------------
+// Four-skill progress (C9) — C2 levels, not XP / current_level
+// ---------------------------------------------------------------------
+
+export type SkillImbalancePriority = "critical" | "high" | "balanced";
+
+export interface SkillLevel {
+  skill: string;
+  level: number;
+}
+
+export interface SkillImbalance {
+  priority: SkillImbalancePriority;
+  skill: string | null;
+  message: string;
+  daily_mix_weight: number | null;
+}
+
+export interface SkillProgress {
+  skills: SkillLevel[];
+  display_level: number;
+  readiness_level: number;
+  imbalance: SkillImbalance;
+}
+
+/** GET /progress/skills — C2 four-skill levels, display, readiness, §5.6. */
+export async function fetchSkillProgress(): Promise<SkillProgress> {
+  const { data } = await api.get<SkillProgress>("/progress/skills");
+  return data;
+}
+
+// ---------------------------------------------------------------------
 // Daily quests & gamification summary (SN-017)
 // ---------------------------------------------------------------------
 

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "pron-F2-home",
+    "title": "Home words — apartment, lease, landlord",
+    "focus": "Five F2 words for the apartment hunt",
+    "target_sentence": "The landlord has a downtown apartment; the lease and rent are on the listing.",
+    "target_words": ["landlord", "apartment", "lease", "rent", "listing"],
+    "ipa_hint": "/ˈlændlɔrd/ · /əˈpɑrtmənt/ · /liːs/ · /rɛnt/ · /ˈlɪstɪŋ/",
+    "tip": "Lease rhymes with peace. Apartment has a quiet first syllable.",
+    "level": "seed",
+    "is_premium": false,
+    "unit_id": "F2",
+    "sonolo_level": 1,
+    "is_published": true
+  }
+]

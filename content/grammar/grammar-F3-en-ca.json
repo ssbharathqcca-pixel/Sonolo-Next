@@ -1,0 +1,37 @@
+{
+  "id": "grammar-F3-articles",
+  "unit_id": "F3",
+  "type": "grammar_spotlight",
+  "language": "en-CA",
+  "level": 2,
+  "title": "Articles and store questions",
+  "read_minutes": 3,
+  "grammar_targets": [
+    "Articles: a, an, the",
+    "Can I have / Where is...?",
+    "Count vs. uncount nouns"
+  ],
+  "explanation": "At the grocery store you name things with a, an, or the, and you ask for help with Can I have...? and Where is...?",
+  "sections": [
+    {
+      "heading": "a, an, the",
+      "text": "Use a before a consonant sound (a bag, a cart, a loaf). Use an before a vowel sound (an apple, an aisle announcement). Use the when both of you know which one (the dairy aisle, the cashier, the flyer)."
+    },
+    {
+      "heading": "Can I have...? / Where is...?",
+      "text": "Can I have a bag? is a polite request at checkout. Where is the rice? or Where is aisle 4? asks for a place. Short answers are fine: Aisle 4, next to the dairy."
+    },
+    {
+      "heading": "Count vs. uncount",
+      "text": "Count nouns take a number or a/an: a loaf, two bags, three apples. Uncount nouns do not: milk, rice, bread. Say some milk, a bag of rice, a loaf of bread — not a milk or two breads."
+    }
+  ],
+  "examples": [
+    {"prompt": "I need ___ apple.", "answer": "an", "note": "apple starts with a vowel sound"},
+    {"prompt": "Where is ___ bus stop?", "answer": "the", "note": "you both know which stop"},
+    {"prompt": "Can I have ___ bag?", "answer": "a", "note": "one bag, consonant sound"},
+    {"prompt": "I bought some milk, not two milks.", "answer": "uncount", "note": "milk is uncount; use some"}
+  ],
+  "try_it": "At the store, say: Where is the dairy aisle? Can I have a bag?",
+  "is_published": true
+}

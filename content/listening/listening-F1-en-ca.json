@@ -1,0 +1,77 @@
+[
+  {
+    "id": "listen-F1-announcement",
+    "title": "Pearson arrival announcement",
+    "context": "You land at Toronto Pearson. A speaker gives gate and luggage instructions.",
+    "level": "seed",
+    "difficulty": 0.15,
+    "listening_focus": "details",
+    "is_premium": false,
+    "unit_id": "F1",
+    "sonolo_level": 1,
+    "turns": [
+      {"role": "speaker", "text": "Welcome to Toronto Pearson. Flight 441 is at gate B12.", "pause_after_ms": 1000},
+      {"role": "speaker", "text": "Please go to the terminal for luggage.", "pause_after_ms": 800},
+      {"role": "speaker", "text": "Have your passport ready for the officer.", "pause_after_ms": 800},
+      {"role": "speaker", "text": "Taxis wait outside arrivals.", "pause_after_ms": 800},
+      {"role": "speaker", "text": "Welcome to Canada.", "pause_after_ms": 600}
+    ],
+    "questions": [
+      {"prompt": "Which gate is the flight at?", "choices": ["A1", "B12", "C4", "D9"], "correct_index": 1, "explanation": "The speaker said gate B12."},
+      {"prompt": "Where do you get luggage?", "choices": ["The taxi stand", "The terminal", "Gate B12", "Customs only"], "correct_index": 1, "explanation": "Luggage is in the terminal."},
+      {"prompt": "What should you have ready?", "choices": ["A ticket only", "Your passport", "A map", "A suitcase key"], "correct_index": 1, "explanation": "Have your passport ready for the officer."}
+    ],
+    "vocab_targets": ["Pearson", "gate", "flight", "terminal", "luggage", "passport", "officer", "taxi", "arrival", "welcome"],
+    "dictation_segments": [{"turn_index": 2, "text": "Have your passport ready for the officer.", "key_words": ["passport", "officer"]}]
+  },
+  {
+    "id": "listen-F1-customs",
+    "title": "At the customs desk",
+    "context": "A customs officer asks for your form and passport.",
+    "level": "seed",
+    "difficulty": 0.18,
+    "listening_focus": "details",
+    "is_premium": false,
+    "unit_id": "F1",
+    "sonolo_level": 1,
+    "turns": [
+      {"role": "speaker", "text": "Good morning. Passport and arrival form, please.", "pause_after_ms": 900},
+      {"role": "listener", "text": "Yes. Here is my passport and my form.", "pause_after_ms": 800},
+      {"role": "speaker", "text": "What is your address in Canada?", "pause_after_ms": 800},
+      {"role": "listener", "text": "I am staying with family in Toronto.", "pause_after_ms": 800},
+      {"role": "speaker", "text": "Thank you. Welcome to Canada. You may go.", "pause_after_ms": 600}
+    ],
+    "questions": [
+      {"prompt": "What does the officer ask for first?", "choices": ["A taxi ticket", "Passport and arrival form", "Luggage keys", "A gate number"], "correct_index": 1, "explanation": "The officer asked for passport and arrival form."},
+      {"prompt": "What does the officer ask next?", "choices": ["Your job", "Your address in Canada", "Your gate", "Your flight number"], "correct_index": 1, "explanation": "The officer asked for the address in Canada."},
+      {"prompt": "Can the traveller leave?", "choices": ["No, wait at customs", "Yes, the officer said you may go", "Only after a taxi", "Only with a ticket"], "correct_index": 1, "explanation": "The officer said you may go."}
+    ],
+    "vocab_targets": ["passport", "arrival", "form", "officer", "address", "welcome"],
+    "dictation_segments": [{"turn_index": 0, "text": "Good morning. Passport and arrival form, please.", "key_words": ["passport", "arrival", "form"]}]
+  },
+  {
+    "id": "listen-F1-taxi",
+    "title": "Taxi at arrivals",
+    "context": "You ask a taxi driver to go from Pearson to your address.",
+    "level": "seed",
+    "difficulty": 0.16,
+    "listening_focus": "details",
+    "is_premium": false,
+    "unit_id": "F1",
+    "sonolo_level": 1,
+    "turns": [
+      {"role": "speaker", "text": "Taxi? Where to today?", "pause_after_ms": 800},
+      {"role": "listener", "text": "Pearson to 12 King Street, please.", "pause_after_ms": 800},
+      {"role": "speaker", "text": "I can take you. Put your luggage in the back.", "pause_after_ms": 800},
+      {"role": "listener", "text": "Thank you. Here is my ticket if you need the address.", "pause_after_ms": 800},
+      {"role": "speaker", "text": "I know King Street. Welcome.", "pause_after_ms": 600}
+    ],
+    "questions": [
+      {"prompt": "Where does the rider want to go?", "choices": ["The gate", "12 King Street", "Customs", "Terminal 3"], "correct_index": 1, "explanation": "The rider said 12 King Street."},
+      {"prompt": "Where should the luggage go?", "choices": ["On the seat", "In the back", "At the gate", "With the officer"], "correct_index": 1, "explanation": "The driver said put luggage in the back."},
+      {"prompt": "Does the driver know the street?", "choices": ["No", "Yes, King Street", "Only Pearson", "Only the terminal"], "correct_index": 1, "explanation": "The driver said I know King Street."}
+    ],
+    "vocab_targets": ["taxi", "Pearson", "luggage", "ticket", "address", "welcome"],
+    "dictation_segments": [{"turn_index": 2, "text": "I can take you. Put your luggage in the back.", "key_words": ["luggage"]}]
+  }
+]

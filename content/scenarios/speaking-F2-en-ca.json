@@ -1,0 +1,52 @@
+[
+  {
+    "id": "speak-F2-landlord",
+    "title": "Call the landlord",
+    "description": "Call a landlord about a downtown apartment. Say you need a bedroom, ask about rent, and ask for a viewing.",
+    "category": "housing",
+    "mode": "immigration",
+    "level": "seed",
+    "target_language": "en-CA",
+    "unit_id": "F2",
+    "sonolo_level": 1,
+    "system_prompt": "You are a patient landlord in Toronto. Speak in short Level-1 sentences. The one-bedroom apartment downtown is available. Rent is 1500. Utilities are extra. Offer a Saturday viewing. Ask one question at a time.",
+    "opening_line": "Hello, this is Sam. You called about the apartment?",
+    "expected_turns": 5,
+    "success_criteria": [
+      "User says they need an apartment or bedroom",
+      "User asks about rent or deposit",
+      "User asks for a viewing",
+      "User uses please or thank you",
+      "User answers at least one landlord question"
+    ],
+    "vocabulary_targets": ["apartment", "landlord", "rent", "bedroom", "viewing", "downtown"],
+    "grammar_targets": ["I need / I want"],
+    "cultural_notes": "A short, polite call is normal. Ask about rent, utilities, and a viewing time.",
+    "is_premium": false,
+    "is_published": true
+  },
+  {
+    "id": "speak-F2-sprint",
+    "title": "SpeakSprint: describe the apartment you need",
+    "description": "SpeakSprint — 60 seconds. Describe the apartment you need: bedroom, kitchen, downtown, rent. Mention a roommate or lease if you can.",
+    "category": "housing",
+    "mode": "immigration",
+    "level": "seed",
+    "target_language": "en-CA",
+    "unit_id": "F2",
+    "sonolo_level": 1,
+    "system_prompt": "You are a SpeakSprint coach for Foundation Level 1. The learner has 60 seconds to describe the apartment they need. Do not interrupt. After they finish, repeat one housing word they used.",
+    "opening_line": "You have 60 seconds. Tell me the apartment you need — rooms, rent, and where. Go ahead.",
+    "expected_turns": 1,
+    "success_criteria": [
+      "User describes an apartment in a sustained turn",
+      "User uses housing vocabulary",
+      "User speaks for a SpeakSprint-length turn"
+    ],
+    "vocabulary_targets": ["apartment", "bedroom", "kitchen", "rent", "downtown", "lease"],
+    "grammar_targets": ["There is / There are"],
+    "cultural_notes": "Saying I need a one-bedroom downtown is a complete, useful answer.",
+    "is_premium": false,
+    "is_published": true
+  }
+]

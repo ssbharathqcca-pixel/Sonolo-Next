@@ -77,6 +77,10 @@ class User(Base):
         String(10), default=PreferredLanguage.ENGLISH.value,
         server_default=text("'en'"),
     )
+    #: Four-skill numeric level (C0 / Part II §2.3). Parallel to current_level.
+    sonolo_level: Mapped[int] = mapped_column(
+        Integer, default=1, server_default=text("1")
+    )
     streak_count: Mapped[int] = mapped_column(
         Integer, default=0, server_default=text("0")
     )

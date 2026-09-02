@@ -1,0 +1,112 @@
+[
+  {
+    "id": "listen-F3-superstore",
+    "title": "At the Superstore",
+    "context": "You are in a Canadian grocery store. A clerk offers to help you find rice and bread.",
+    "level": "sprout",
+    "difficulty": 0.25,
+    "listening_focus": "details",
+    "is_premium": false,
+    "unit_id": "F3",
+    "sonolo_level": 2,
+    "turns": [
+      {
+        "role": "speaker",
+        "text": "Hi there, can I help you find something in the grocery aisles today?",
+        "pause_after_ms": 1200
+      },
+      {
+        "role": "listener",
+        "text": "Yes please. I need a bag of rice and a loaf of fresh bread.",
+        "pause_after_ms": 1000
+      },
+      {
+        "role": "speaker",
+        "text": "Rice is in aisle 4, next to the dairy.",
+        "pause_after_ms": 1000
+      },
+      {
+        "role": "listener",
+        "text": "Thanks. The flyer had a sale — is the rice on discount?",
+        "pause_after_ms": 1000
+      },
+      {
+        "role": "speaker",
+        "text": "Yes, it's on sale this week. The cashier takes it off at checkout.",
+        "pause_after_ms": 1000
+      },
+      {
+        "role": "listener",
+        "text": "Perfect. I'll grab a cart and meet you at checkout.",
+        "pause_after_ms": 800
+      },
+      {
+        "role": "speaker",
+        "text": "See you at checkout. Don't forget your grocery bag.",
+        "pause_after_ms": 800
+      }
+    ],
+    "questions": [
+      {
+        "prompt": "What did the customer order?",
+        "choices": [
+          "Frozen pizza and milk",
+          "A bag of rice and a loaf of fresh bread",
+          "Only a loaf of bread",
+          "Rice and a cart"
+        ],
+        "correct_index": 1,
+        "explanation": "The customer asked for a bag of rice and a loaf of fresh bread."
+      },
+      {
+        "prompt": "Which aisle has the rice?",
+        "choices": [
+          "Aisle 2",
+          "Aisle 3",
+          "Aisle 4",
+          "Aisle 5"
+        ],
+        "correct_index": 2,
+        "explanation": "The clerk said rice is in aisle 4, next to the dairy."
+      },
+      {
+        "prompt": "Why did the clerk mention a sale?",
+        "choices": [
+          "The store is closing",
+          "The customer asked about a flyer sale on rice",
+          "Bread is always free",
+          "The cashier was on a break"
+        ],
+        "correct_index": 1,
+        "explanation": "The customer mentioned the flyer sale; the clerk confirmed the rice is on discount this week."
+      }
+    ],
+    "vocab_targets": [
+      "grocery",
+      "aisle",
+      "rice",
+      "loaf",
+      "fresh",
+      "dairy",
+      "flyer",
+      "sale",
+      "discount",
+      "cashier",
+      "checkout",
+      "cart",
+      "bag"
+    ],
+    "dictation_segments": [
+      {
+        "turn_index": 2,
+        "text": "Rice is in aisle 4, next to the dairy.",
+        "key_words": ["rice", "aisle", "dairy"]
+      },
+      {
+        "turn_index": 4,
+        "text": "Yes, it's on sale this week.",
+        "key_words": ["sale", "week"]
+      }
+    ]
+  }
+]

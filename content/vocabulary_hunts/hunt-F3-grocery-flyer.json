@@ -1,0 +1,11 @@
+{
+  "id": "hunt-F3-grocery-flyer",
+  "unit_id": "F3",
+  "type": "vocabulary_hunt",
+  "language": "en-CA",
+  "level": 2,
+  "title": "Find grocery words in the flyer",
+  "reading_exercise_id": "reading-F3-grocery-flyer",
+  "target_words": ["aisle", "fresh", "loaf", "milk", "savings"],
+  "is_published": true
+}

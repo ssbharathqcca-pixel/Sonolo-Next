@@ -215,9 +215,9 @@ async def test_evaluate_404_for_unknown_drill(
 
 async def test_pronunciation_not_in_scenario_or_vocab_seeds() -> None:
     """Regression: the pronunciation type is ignored by scenario/vocab seeders."""
-    assert len(load_scenario_seeds()) == 155
+    assert len(load_scenario_seeds()) == 161
     assert all(
         not seed.pack_id.startswith("canadian-speech")
         for seed in load_scenario_seeds()
     )
-    assert len(load_vocabulary_seeds()) == 820
+    assert len(load_vocabulary_seeds()) == 870

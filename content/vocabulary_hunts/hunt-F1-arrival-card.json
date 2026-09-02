@@ -1,0 +1,11 @@
+{
+  "id": "hunt-F1-arrival-card",
+  "unit_id": "F1",
+  "type": "vocabulary_hunt",
+  "language": "en-CA",
+  "level": 1,
+  "title": "Find arrival words on the card",
+  "reading_exercise_id": "reading-F1-arrival-card",
+  "target_words": ["passport", "Pearson", "customs", "luggage", "taxi"],
+  "is_published": true
+}

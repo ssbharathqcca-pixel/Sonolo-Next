@@ -12,12 +12,12 @@ Loads every pack declared in content/manifest.json (SN-027):
                  housing-english-v1, finance-english-v1,
                  quebec-housing-v1, quebec-finance-v1,
                  smalltalk-english-v1, job-interviews-english-v1,
-                 hospitality-english-v1                     (155)
+                 hospitality-english-v1, speaking-F1/F2/F3  (161)
     vocabulary : core-v1 + v2, core-fr-v1, workplace + healthcare,
                  quebec-healthcare + quebec-workplace,
                  housing + finance, quebec-housing + quebec-finance,
                  smalltalk, job-interviews, hospitality,
-                 listening                                   (820)
+                 listening, F1/F2/F3 primers                 (870)
 
 Micro-lessons (culture-english-v1, culture-french-v1), pronunciation
 drills (canadian-speech-english-v1), and listening dialogues
@@ -31,7 +31,7 @@ loader so both seeding paths stay byte-identical, including the
 per-scenario pack_id mapping (SN-035). Vocabulary stays user-scoped
 by design (D-008): this script validates and counts the combined
 packs; cards materialize lazily per user via GET /api/review/due.
-Re-running is a no-op: counts stay stable at 155 scenarios / 820
+Re-running is a no-op: counts stay stable at 161 scenarios / 870
 vocabulary pack items.
 """
 
@@ -42,15 +42,14 @@ from typing import Any
 
 from sqlalchemy import func, select
 
-from app.db.session import AsyncSessionLocal, dialect_name
+from app.db.session import AsyncSessionLocal
 from app.models.scenario import Scenario
 from app.services.content_service import (
     _resolve_pack_path,
     load_manifest_packs,
     load_scenario_seeds,
+    seed_scenarios as seed_scenarios_service,
 )
-from sqlalchemy.dialects.postgresql import insert as pg_insert
-from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 
 REQUIRED_VOCAB_FIELDS = {"id", "word", "translations", "fsrs_params"}
 REQUIRED_TRANSLATIONS = {"pa", "en", "hi", "zh", "es"}
@@ -110,44 +109,9 @@ def validate_vocabulary_packs() -> dict[str, int]:
 
 async def seed_scenarios(db) -> int:
     """Idempotently upsert all scenarios from every loaded pack."""
-    seeds = load_all_scenario_seeds()
-    for seed in seeds:
-        values = {
-            "id": seed.id,
-            "title": seed.title,
-            "description": seed.description,
-            "category": seed.category,
-            "mode": seed.mode,
-            "level": seed.level,
-            "difficulty": seed.difficulty,
-            "target_language": seed.target_language,
-            "pack_id": seed.pack_id,
-            "system_prompt": seed.system_prompt,
-            "opening_line": seed.opening_line,
-            "expected_turns": seed.expected_turns,
-            "success_criteria": seed.success_criteria,
-            "vocabulary_targets": seed.vocabulary_targets,
-            "grammar_targets": seed.grammar_targets,
-            "cultural_notes": seed.cultural_notes,
-            "is_premium": seed.is_premium,
-            "is_published": True,
-        }
-        if dialect_name(db) == "postgresql":
-            statement = (
-                pg_insert(Scenario)
-                .values(**values)
-                .on_conflict_do_update(index_elements=["id"], set_=values)
-            )
-        else:
-            statement = (
-                sqlite_insert(Scenario)
-                .values(**values)
-                .on_conflict_do_update(index_elements=["id"], set_=values)
-            )
-        await db.execute(statement)
-    await db.commit()
-    print(f"scenario_upserts={len(seeds)}")
-    return len(seeds)
+    count = await seed_scenarios_service(db)
+    print(f"scenario_upserts={count}")
+    return count
 
 
 async def main() -> int:

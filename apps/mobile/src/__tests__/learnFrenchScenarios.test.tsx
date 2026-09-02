@@ -20,13 +20,18 @@ jest.mock("react-native-reanimated", () => {
   return {
     __esModule: true,
     default: { View },
-    Easing: { out: (easing: unknown) => easing, quad: (t: number) => t },
+    Easing: {
+      out: (easing: unknown) => easing,
+      inOut: (easing: unknown) => easing,
+      quad: (t: number) => t,
+    },
     useSharedValue: (value: number) => ({ value }),
     useAnimatedStyle: (
       builder: (shared: { value: number }) => Record<string, unknown>,
     ) => builder({ value: 0 }),
     withTiming: (value: number) => value,
     withDelay: (_delay: number, value: number) => value,
+    withRepeat: (value: number) => value,
   };
 });
 
@@ -71,6 +76,9 @@ jest.mock("../../src/api/client", () => {
     fetchMicrolessons: jest.fn(async () => []),
     fetchPronunciationDrills: jest.fn(async () => []),
     fetchListeningDialogues: jest.fn(async () => []),
+    fetchJourney: jest.fn(async () => {
+      throw new Error("offline");
+    }),
     fetchTodayQuests: jest.fn(async () => ({
       quest_date: "2026-08-24",
       timezone: "America/Toronto",

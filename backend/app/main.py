@@ -11,9 +11,11 @@ from app.api import (
     auth,
     gamification,
     health,
+    learn,
     listening,
     microlessons,
     packs,
+    progress,
     pronunciation,
     quests,
     review,
@@ -69,7 +71,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.include_router(microlessons.router, prefix=settings.api_prefix)
     app.include_router(pronunciation.router, prefix=settings.api_prefix)
     app.include_router(listening.router, prefix=settings.api_prefix)
+    app.include_router(learn.router, prefix=settings.api_prefix)
     app.include_router(scorecard.router, prefix=settings.api_prefix)
+    app.include_router(progress.router, prefix=settings.api_prefix)
     app.include_router(ws.router)
     return app
 

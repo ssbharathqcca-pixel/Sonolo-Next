@@ -1,0 +1,96 @@
+[
+  {
+    "id": "reading-F1-arrival-card",
+    "unit_id": "F1",
+    "type": "reading",
+    "language": "en-CA",
+    "title": "Arrival card",
+    "text_content": "Welcome to Canada. This is your arrival card. Write your family name and given name. Write your passport number. Your flight landed at Pearson Terminal 1. Go to customs with your luggage. An officer will ask for your form. After customs, take a taxi at the gate. Keep your ticket and address for the taxi driver. The welcome desk can help if you are lost.",
+    "text_source": "original",
+    "word_count": 64,
+    "level": 1,
+    "text_type": "form",
+    "questions": [
+      {
+        "id": "reading-F1-arrival-card-q1",
+        "type": "multiple_choice",
+        "question": "Where did the flight land?",
+        "options": ["Gate B only", "Pearson Terminal 1", "A taxi stand", "The welcome desk"],
+        "correct_answer": 1,
+        "explanation": "The card says the flight landed at Pearson Terminal 1.",
+        "skill_tested": "literal"
+      },
+      {
+        "id": "reading-F1-arrival-card-q2",
+        "type": "true_false",
+        "question": "You should go to customs without your luggage.",
+        "options": ["True", "False"],
+        "correct_answer": 1,
+        "explanation": "The card says go to customs with your luggage.",
+        "skill_tested": "literal"
+      },
+      {
+        "id": "reading-F1-arrival-card-q3",
+        "type": "fill_blank",
+        "question": "Keep your ticket and ____ for the taxi driver.",
+        "options": null,
+        "correct_answer": "address",
+        "accepted_answers": ["your address", "the address"],
+        "explanation": "Keep your ticket and address.",
+        "skill_tested": "literal"
+      }
+    ],
+    "vocabulary_targets": ["arrival", "passport", "Pearson", "customs", "luggage", "officer", "form", "taxi", "gate", "ticket", "address", "welcome"],
+    "grammar_targets": ["I am / My name is"],
+    "cultural_note": "Arrival cards are short forms you complete before or just after landing in Canada.",
+    "reading_time_minutes": 1,
+    "is_published": true
+  },
+  {
+    "id": "reading-F1-airport-signs",
+    "unit_id": "F1",
+    "type": "reading",
+    "language": "en-CA",
+    "title": "Airport signs",
+    "text_content": "Follow the signs at Pearson. Arrivals is downstairs. Customs is after the luggage belts in the terminal. Gate numbers are on the screens. Taxis wait outside Door 3. The welcome desk is next to the taxi line. Show your passport if an officer asks. Keep your ticket for the train or taxi. Write your new address on the form before you leave the airport.",
+    "text_source": "original",
+    "word_count": 62,
+    "level": 1,
+    "text_type": "sign",
+    "questions": [
+      {
+        "id": "reading-F1-airport-signs-q1",
+        "type": "multiple_choice",
+        "question": "Where do taxis wait?",
+        "options": ["Gate B12", "Outside Door 3", "At customs", "At the luggage belt"],
+        "correct_answer": 1,
+        "explanation": "Taxis wait outside Door 3.",
+        "skill_tested": "literal"
+      },
+      {
+        "id": "reading-F1-airport-signs-q2",
+        "type": "true_false",
+        "question": "Arrivals is upstairs.",
+        "options": ["True", "False"],
+        "correct_answer": 1,
+        "explanation": "Arrivals is downstairs.",
+        "skill_tested": "literal"
+      },
+      {
+        "id": "reading-F1-airport-signs-q3",
+        "type": "fill_blank",
+        "question": "The welcome desk is next to the ____ line.",
+        "options": null,
+        "correct_answer": "taxi",
+        "accepted_answers": ["taxi line", "the taxi"],
+        "explanation": "Next to the taxi line.",
+        "skill_tested": "literal"
+      }
+    ],
+    "vocabulary_targets": ["Pearson", "arrival", "customs", "luggage", "terminal", "gate", "taxi", "welcome", "passport", "officer", "ticket", "address", "form"],
+    "grammar_targets": ["This is / That is"],
+    "cultural_note": "Canadian airports use clear bilingual signs. Follow Arrivals, then Customs, then ground transport.",
+    "reading_time_minutes": 1,
+    "is_published": true
+  }
+]

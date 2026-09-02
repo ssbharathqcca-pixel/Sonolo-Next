@@ -100,7 +100,7 @@ async def test_fresh_user_release_journey(smoke_client, db_session) -> None:
     from app.services.content_service import seed_scenarios
 
     seeded = await seed_scenarios(db_session)
-    assert seeded == 155
+    assert seeded == 161
     scenario = (
         await db_session.execute(select(Scenario).limit(1))
     ).scalar_one()

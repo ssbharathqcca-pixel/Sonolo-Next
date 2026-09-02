@@ -122,6 +122,10 @@ export default function RootLayout(): JSX.Element {
                     name="scorecard"
                     options={{ animation: "slide_from_bottom" }}
                   />
+                  <Stack.Screen
+                    name="unit/[id]"
+                    options={{ animation: "slide_from_right" }}
+                  />
                 </Stack>
               )}
               <OfflineBanner />

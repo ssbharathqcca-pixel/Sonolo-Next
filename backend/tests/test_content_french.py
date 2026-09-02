@@ -67,11 +67,12 @@ def _french_scenario_seeds():
 
 
 def _french_vocabulary_seeds():
-    return [
-        seed
-        for seed in load_vocabulary_seeds()
-        if int(seed.content_id.split("-")[-1]) > 200
-    ]
+    seeds = []
+    for seed in load_vocabulary_seeds():
+        suffix = seed.content_id.split("-")[-1]
+        if suffix.isdigit() and int(suffix) > 200:
+            seeds.append(seed)
+    return seeds
 
 
 def test_french_scenario_pack_loads_five_free_scenarios() -> None:
@@ -153,9 +154,9 @@ def _disabled_test_duplicate_vocabulary_ids_across_packs_raise(monkeypatch) -> N
 def test_combined_seed_counts() -> None:
     seeds = load_scenario_seeds()
     vocab = load_vocabulary_seeds()
-    assert len(seeds) == 155
-    assert sum(1 for s in seeds if s.target_language.startswith("en")) == 110
-    assert len(vocab) == 820
+    assert len(seeds) == 161
+    assert sum(1 for s in seeds if s.target_language.startswith("en")) == 116
+    assert len(vocab) == 870
 
 
 def test_scenario_seeds_carry_manifest_pack_ids() -> None:
@@ -175,6 +176,9 @@ def test_scenario_seeds_carry_manifest_pack_ids() -> None:
         "smalltalk-english-v1": 10,
         "job-interviews-english-v1": 10,
         "hospitality-english-v1": 10,
+        "speaking-f3-en-ca": 2,
+        "speaking-f1-en-ca": 2,
+        "speaking-f2-en-ca": 2,
     }
 
 
@@ -184,6 +188,7 @@ def test_vocabulary_seeds_carry_language_metadata() -> None:
     french = [seed for seed in seeds if seed.language == "fr"]
     assert len(english) == 600
     assert len(french) == 220
+    assert sum(1 for seed in seeds if seed.language == "en-CA") == 50
     # Every French seed maps to one of the manifest's French vocabulary
     # packs (core-fr-v1 plus the Quebec healthcare and workplace packs).
     french_pack_paths = [

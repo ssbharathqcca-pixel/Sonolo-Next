@@ -65,6 +65,7 @@ async def list_scenarios(
     result = await db.execute(
         select(Scenario)
         .where(Scenario.is_published.is_(True))
+        .where(Scenario.unit_id.is_(None))
         .where(
             or_(
                 func.lower(Scenario.target_language) == normalized,

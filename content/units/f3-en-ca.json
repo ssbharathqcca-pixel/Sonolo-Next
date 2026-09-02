@@ -1,0 +1,82 @@
+{
+  "id": "F3",
+  "band": "foundation",
+  "level_target": 2,
+  "sort_order": 3,
+  "language": "en-CA",
+  "title": "First Week",
+  "story_chapter": "Grocery run & transit",
+  "theme": "daily_errands",
+  "icon": "🛒",
+  "vocabulary_targets": [
+    "grocery",
+    "aisle",
+    "receipt",
+    "checkout",
+    "cashier",
+    "discount",
+    "sale",
+    "flyer",
+    "cart",
+    "transfer",
+    "fare",
+    "Presto",
+    "bus",
+    "subway",
+    "change",
+    "bag",
+    "fresh",
+    "frozen",
+    "dairy",
+    "loaf"
+  ],
+  "grammar_targets": [
+    "Articles: a, an, the",
+    "Can I have / Where is...?",
+    "Count vs. uncount nouns"
+  ],
+  "cultural_context": "Canadian grocery stores (No Frills, Loblaws, Save-On-Foods) use weekly flyers. Transit in most cities uses a tap card (Presto in Ontario, Opus in Montreal). Asking for help is normal and expected.",
+  "vocab_primer_ids": [
+    "vocab-F3-grocery",
+    "vocab-F3-aisle",
+    "vocab-F3-receipt",
+    "vocab-F3-checkout",
+    "vocab-F3-cashier",
+    "vocab-F3-discount",
+    "vocab-F3-sale",
+    "vocab-F3-flyer",
+    "vocab-F3-cart",
+    "vocab-F3-transfer",
+    "vocab-F3-fare",
+    "vocab-F3-presto",
+    "vocab-F3-bus",
+    "vocab-F3-subway",
+    "vocab-F3-change",
+    "vocab-F3-bag",
+    "vocab-F3-fresh",
+    "vocab-F3-frozen",
+    "vocab-F3-dairy",
+    "vocab-F3-loaf"
+  ],
+  "listening_ids": ["listen-F3-superstore"],
+  "reading_ids": ["reading-F3-grocery-flyer"],
+  "reading_required_activities": [
+    {"id": "reading-F3-grocery-flyer", "type": "reading_exercise"},
+    {"id": "hunt-F3-grocery-flyer", "type": "vocabulary_hunt"}
+  ],
+  "reading_optional_activities": [],
+  "speaking_ids": [
+    "speak-F3-clerk",
+    "speak-F3-sprint",
+    "pron-F3-grocery"
+  ],
+  "writing_ids": [
+    "writing-F3-sentence-builder",
+    "writing-F3-shopping-list",
+    "writing-F3-error-fix"
+  ],
+  "grammar_spotlight_id": "grammar-F3-articles",
+  "unit_test_id": "test-F3",
+  "prerequisites": ["F2"],
+  "is_published": true
+}

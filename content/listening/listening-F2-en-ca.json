@@ -1,0 +1,77 @@
+[
+  {
+    "id": "listen-F2-voicemail",
+    "title": "Landlord voicemail",
+    "context": "A landlord leaves a voicemail about an apartment viewing.",
+    "level": "seed",
+    "difficulty": 0.18,
+    "listening_focus": "details",
+    "is_premium": false,
+    "unit_id": "F2",
+    "sonolo_level": 1,
+    "turns": [
+      {"role": "speaker", "text": "Hello, this is Sam, the landlord.", "pause_after_ms": 800},
+      {"role": "speaker", "text": "The one-bedroom apartment downtown is available.", "pause_after_ms": 800},
+      {"role": "speaker", "text": "Rent is one thousand five hundred, utilities extra.", "pause_after_ms": 900},
+      {"role": "speaker", "text": "Please come for a viewing Saturday at two.", "pause_after_ms": 800},
+      {"role": "speaker", "text": "Bring a notice if you have a roommate.", "pause_after_ms": 600}
+    ],
+    "questions": [
+      {"prompt": "Who is calling?", "choices": ["A roommate", "The landlord", "A listing site", "The kitchen store"], "correct_index": 1, "explanation": "Sam is the landlord."},
+      {"prompt": "Is the apartment available?", "choices": ["No", "Yes, downtown", "Only the kitchen", "Only with a lease today"], "correct_index": 1, "explanation": "The one-bedroom downtown is available."},
+      {"prompt": "When is the viewing?", "choices": ["Friday at two", "Saturday at two", "Sunday at two", "Monday at two"], "correct_index": 1, "explanation": "Saturday at two."}
+    ],
+    "vocab_targets": ["landlord", "apartment", "bedroom", "downtown", "available", "rent", "utilities", "viewing", "roommate", "notice"],
+    "dictation_segments": [{"turn_index": 3, "text": "Please come for a viewing Saturday at two.", "key_words": ["viewing", "Saturday"]}]
+  },
+  {
+    "id": "listen-F2-roommate",
+    "title": "Roommate chat",
+    "context": "A possible roommate describes the kitchen and bedroom.",
+    "level": "seed",
+    "difficulty": 0.17,
+    "listening_focus": "details",
+    "is_premium": false,
+    "unit_id": "F2",
+    "sonolo_level": 1,
+    "turns": [
+      {"role": "speaker", "text": "Hi! There is a small bedroom for you.", "pause_after_ms": 800},
+      {"role": "listener", "text": "Is there a kitchen we can share?", "pause_after_ms": 800},
+      {"role": "speaker", "text": "Yes. There is a kitchen. Utilities are in the rent.", "pause_after_ms": 800},
+      {"role": "listener", "text": "I need a quiet place downtown.", "pause_after_ms": 800},
+      {"role": "speaker", "text": "This listing is downtown. Come to the viewing.", "pause_after_ms": 600}
+    ],
+    "questions": [
+      {"prompt": "What room is for the new person?", "choices": ["The kitchen", "A small bedroom", "The landlord office", "A deposit room"], "correct_index": 1, "explanation": "There is a small bedroom."},
+      {"prompt": "Are utilities extra?", "choices": ["Yes, always extra", "No, they are in the rent", "Only water", "Only internet"], "correct_index": 1, "explanation": "Utilities are in the rent."},
+      {"prompt": "Where is the listing?", "choices": ["Uptown", "Downtown", "The airport", "A lease office"], "correct_index": 1, "explanation": "The listing is downtown."}
+    ],
+    "vocab_targets": ["bedroom", "kitchen", "utilities", "rent", "downtown", "listing", "viewing"],
+    "dictation_segments": [{"turn_index": 2, "text": "Yes. There is a kitchen. Utilities are in the rent.", "key_words": ["kitchen", "utilities", "rent"]}]
+  },
+  {
+    "id": "listen-F2-viewing",
+    "title": "Apartment viewing",
+    "context": "The landlord shows the apartment and talks about the lease and deposit.",
+    "level": "seed",
+    "difficulty": 0.19,
+    "listening_focus": "details",
+    "is_premium": false,
+    "unit_id": "F2",
+    "sonolo_level": 1,
+    "turns": [
+      {"role": "speaker", "text": "Come in. This is the apartment.", "pause_after_ms": 800},
+      {"role": "listener", "text": "I like the kitchen. What is the deposit?", "pause_after_ms": 800},
+      {"role": "speaker", "text": "The deposit is one month of rent.", "pause_after_ms": 800},
+      {"role": "listener", "text": "Can I send an inquiry about the lease?", "pause_after_ms": 800},
+      {"role": "speaker", "text": "Yes. I will send the lease after your notice.", "pause_after_ms": 600}
+    ],
+    "questions": [
+      {"prompt": "What is the deposit?", "choices": ["Two months", "One month of rent", "No deposit", "Only utilities"], "correct_index": 1, "explanation": "The deposit is one month of rent."},
+      {"prompt": "What does the visitor like?", "choices": ["The landlord", "The kitchen", "The listing photo", "The notice"], "correct_index": 1, "explanation": "The visitor likes the kitchen."},
+      {"prompt": "When will the lease come?", "choices": ["Never", "After the notice", "Before the viewing", "Only downtown"], "correct_index": 1, "explanation": "After your notice."}
+    ],
+    "vocab_targets": ["apartment", "kitchen", "deposit", "rent", "inquiry", "lease", "notice"],
+    "dictation_segments": [{"turn_index": 2, "text": "The deposit is one month of rent.", "key_words": ["deposit", "rent"]}]
+  }
+]

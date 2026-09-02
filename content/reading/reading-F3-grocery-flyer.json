@@ -1,0 +1,47 @@
+{
+  "id": "reading-F3-grocery-flyer",
+  "unit_id": "F3",
+  "type": "reading",
+  "language": "en-CA",
+  "title": "Understanding a Grocery Flyer",
+  "text_content": "Save-On-Foods — This Week's Deals (Sept 1–7)\n\nFresh chicken breast: $8.99/kg (save $3.00)\nWhole wheat bread: $3.49 per loaf\nBagged apples (3 lb): $4.99 — Aisle 4\nMilk (2L, 2%): $4.79\n\nUse your More Rewards card for extra savings!\nStore hours: Mon–Sat 8am–9pm, Sun 9am–6pm\nAll prices include applicable taxes.",
+  "text_source": "original",
+  "word_count": 62,
+  "level": 2,
+  "text_type": "flyer",
+  "questions": [
+    {
+      "id": "reading-F3-grocery-flyer-q1",
+      "type": "multiple_choice",
+      "question": "How much do you save on chicken breast?",
+      "options": ["$3.00", "$8.99", "$4.99", "$3.49"],
+      "correct_answer": 0,
+      "explanation": "The flyer says 'save $3.00' next to the chicken breast price.",
+      "skill_tested": "literal"
+    },
+    {
+      "id": "reading-F3-grocery-flyer-q2",
+      "type": "true_false",
+      "question": "The store is open on Sunday from 8am to 9pm.",
+      "options": ["True", "False"],
+      "correct_answer": 1,
+      "explanation": "Sunday hours are 9am–6pm, not 8am–9pm. The 8am–9pm hours are Monday to Saturday.",
+      "skill_tested": "literal"
+    },
+    {
+      "id": "reading-F3-grocery-flyer-q3",
+      "type": "fill_blank",
+      "question": "The bagged apples are in aisle ____.",
+      "options": null,
+      "correct_answer": "4",
+      "accepted_answers": ["aisle 4", "Aisle 4"],
+      "explanation": "The flyer says 'Aisle 4' next to the bagged apples.",
+      "skill_tested": "literal"
+    }
+  ],
+  "vocabulary_targets": ["aisle", "loaf", "savings", "fresh", "milk"],
+  "grammar_targets": ["numbers and prices"],
+  "cultural_note": "Canadian flyers arrive weekly by mail or in store apps. 'More Rewards' is a real loyalty program at Save-On-Foods.",
+  "reading_time_minutes": 1,
+  "is_published": true
+}

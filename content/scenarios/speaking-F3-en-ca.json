@@ -1,0 +1,52 @@
+[
+  {
+    "id": "speak-F3-clerk",
+    "title": "Ask a grocery clerk for help",
+    "description": "You are in a Canadian grocery store on your first week and you cannot find the rice. Ask the clerk for help, follow the aisle direction, and thank them.",
+    "category": "shopping",
+    "mode": "both",
+    "level": "sprout",
+    "target_language": "en-CA",
+    "unit_id": "F3",
+    "sonolo_level": 2,
+    "system_prompt": "You are Sam, a friendly clerk at a Save-On-Foods in Ontario. The learner is lost in the store looking for rice. Speak slowly in short Level-2 sentences. Rice is in aisle 4, next to the dairy. You can mention the weekly flyer, the sale, and the checkout. If they ask about getting home, a Presto tap at the station covers the bus transfer. Correct gently by rephrasing — never scold. Ask one question at a time and wait.",
+    "opening_line": "Hi there — you look a little lost. Can I help you find something?",
+    "expected_turns": 5,
+    "success_criteria": [
+      "User asks for help finding rice or an aisle",
+      "User shows they understood the direction (aisle 4 or dairy)",
+      "User uses at least one grocery word (rice, aisle, dairy, flyer, checkout)",
+      "User thanks the clerk",
+      "User ends the conversation politely"
+    ],
+    "vocabulary_targets": ["aisle", "rice", "dairy", "checkout", "clerk", "flyer", "grocery"],
+    "grammar_targets": ["Can I have / Where is...?", "Articles: a, an, the"],
+    "cultural_notes": "Asking a grocery clerk for help is normal in Canada. Weekly flyers list sales. After shopping, many riders tap a Presto card for the bus or subway.",
+    "is_premium": false,
+    "is_published": true
+  },
+  {
+    "id": "speak-F3-sprint",
+    "title": "SpeakSprint: describe your grocery list",
+    "description": "SpeakSprint — 60 seconds. Describe your grocery list for a first-week shop: rice, a loaf of bread, milk, and anything on the flyer. Mention the aisle or cart, then how you will get home on the bus with Presto.",
+    "category": "shopping",
+    "mode": "both",
+    "level": "sprout",
+    "target_language": "en-CA",
+    "unit_id": "F3",
+    "sonolo_level": 2,
+    "system_prompt": "You are a SpeakSprint coach for Foundation Level 2. The learner has 60 seconds to describe a grocery list and a short transit plan. Do not interrupt during their speaking turn. Keep your own lines very short. After they finish, give one encouraging recap that repeats a correct grocery or transit word. If they freeze, prompt once: 'What is in your cart?'",
+    "opening_line": "You have 60 seconds. Tell me your grocery list — what you need, which aisle, and how you will get home. Go ahead when you are ready.",
+    "expected_turns": 1,
+    "success_criteria": [
+      "User describes a grocery list in a sustained turn",
+      "User uses grocery or transit vocabulary (loaf, cart, flyer, Presto, bus)",
+      "User speaks for a SpeakSprint-length turn (about 60 seconds)"
+    ],
+    "vocabulary_targets": ["grocery", "loaf", "cart", "checkout", "flyer", "Presto", "bus"],
+    "grammar_targets": ["Count vs. uncount nouns", "Articles: a, an, the"],
+    "cultural_notes": "A SpeakSprint is a timed fluency burst. Canadian shoppers often check the flyer, then tap Presto for the bus home.",
+    "is_premium": false,
+    "is_published": true
+  }
+]

@@ -65,7 +65,7 @@ async def test_scenarios_returns_the_seeded_catalog(
     scenarios_client: AsyncClient, db_session: AsyncSession
 ) -> None:
     seeded = await seed_scenarios(db_session)
-    assert seeded == 155
+    assert seeded == 161
 
     response = await scenarios_client.get(
         "/api/scenarios", headers=await auth_headers(scenarios_client)

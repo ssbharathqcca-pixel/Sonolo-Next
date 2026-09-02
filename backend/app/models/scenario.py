@@ -14,6 +14,7 @@ from typing import TYPE_CHECKING, Any
 from sqlalchemy import (
     Boolean,
     DateTime,
+    ForeignKey,
     Index,
     Integer,
     String,
@@ -63,6 +64,12 @@ class Scenario(Base):
     #: before pack tracking remain valid until their next upsert.
     pack_id: Mapped[str | None] = mapped_column(
         String(64), default=None, server_default=text("NULL"), index=True
+    )
+    unit_id: Mapped[uuid.UUID | None] = mapped_column(
+        ForeignKey("units.id"), default=None, server_default=text("NULL")
+    )
+    sonolo_level: Mapped[int | None] = mapped_column(
+        Integer, default=None, server_default=text("NULL")
     )
     system_prompt: Mapped[str] = mapped_column(Text, default="")
     opening_line: Mapped[str] = mapped_column(Text, default="")

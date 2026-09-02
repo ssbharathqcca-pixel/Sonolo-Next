@@ -1,0 +1,70 @@
+{
+  "id": "test-F2",
+  "unit_id": "F2",
+  "type": "unit_test",
+  "language": "en-CA",
+  "level": 1,
+  "time_limit_minutes": 15,
+  "is_published": true,
+  "pass_criteria": {
+    "overall_minimum": 70,
+    "per_skill_minimum": 60
+  },
+  "sections": {
+    "listening": {
+      "weight": 0.25,
+      "title": "Missed-call note from a landlord",
+      "prompt": "A new voicemail — not the practice listening.",
+      "questions": [
+        {"id": "test-F2-listen-q1", "type": "multiple_choice", "question": "How many bedrooms are in the apartment?", "options": ["Studio", "One bedroom", "Three bedrooms", "No kitchen"], "correct_answer": 1},
+        {"id": "test-F2-listen-q2", "type": "multiple_choice", "question": "When is the viewing?", "options": ["Friday at noon", "Sunday at three", "Monday at nine", "Saturday at noon"], "correct_answer": 1},
+        {"id": "test-F2-listen-q3", "type": "multiple_choice", "question": "What should you bring?", "options": ["A passport only", "Photo ID", "A taxi", "A flyer"], "correct_answer": 1},
+        {"id": "test-F2-listen-q4", "type": "true_false", "question": "The viewing is Sunday at three.", "options": ["True", "False"], "correct_answer": 0},
+        {"id": "test-F2-listen-q5", "type": "dictation", "question": "Type the sentence about rent.", "correct_answer": "The rent is due on the first day."}
+      ]
+    },
+    "reading": {
+      "weight": 0.25,
+      "title": "Short lease note",
+      "text_content": "Lease note for 9 Queen Street\n\nThis downtown apartment has one bedroom and a kitchen.\nRent is due on the first day. Utilities are extra this year.\nThe landlord needs 24-hour notice to enter.\nA roommate needs written approval. The deposit stays until you move out.\nEmail an inquiry if you want a second viewing.",
+      "questions": [
+        {"id": "test-F2-read-q1", "type": "multiple_choice", "question": "What rooms are listed?", "options": ["Only a bathroom", "A bedroom and a kitchen", "Two kitchens", "No rooms"], "correct_answer": 1},
+        {"id": "test-F2-read-q2", "type": "multiple_choice", "question": "Are utilities included?", "options": ["Yes, always", "No, they are extra this year", "Only heat", "Only water"], "correct_answer": 1},
+        {"id": "test-F2-read-q3", "type": "multiple_choice", "question": "What does a roommate need?", "options": ["A taxi", "Written approval", "A passport", "A gate number"], "correct_answer": 1},
+        {"id": "test-F2-read-q4", "type": "fill_blank", "question": "The landlord needs 24-hour ____.", "correct_answer": "notice", "accepted_answers": ["Notice"]},
+        {"id": "test-F2-read-q5", "type": "vocabulary_hunt", "question": "Find these words in the note.", "target_words": ["lease", "downtown", "rent", "deposit", "inquiry"]}
+      ]
+    },
+    "speaking": {
+      "weight": 0.30,
+      "task": {
+        "id": "test-F2-speak-1",
+        "prompt": "Call a landlord. Say you need an apartment and ask for a viewing.",
+        "duration_seconds": 120,
+        "vocabulary_targets": ["apartment", "rent", "viewing", "please", "bedroom"]
+      }
+    },
+    "writing": {
+      "weight": 0.20,
+      "tasks": [
+        {
+          "id": "test-F2-write-1",
+          "type": "articles",
+          "prompt": "Complete each sentence with a, an, or the.",
+          "items": [
+            {"id": "a1", "sentence": "I need ___ apartment.", "correct": "an"},
+            {"id": "a2", "sentence": "Where is ___ kitchen?", "correct": "the"},
+            {"id": "a3", "sentence": "There is ___ bedroom.", "correct": "a"}
+          ]
+        },
+        {
+          "id": "test-F2-write-2",
+          "type": "short_message",
+          "prompt": "Write a 3-sentence inquiry to the landlord about rent and a viewing.",
+          "min_sentences": 3,
+          "keywords": ["landlord", "rent", "viewing"]
+        }
+      ]
+    }
+  }
+}

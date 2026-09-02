@@ -1,0 +1,16 @@
+[
+  {
+    "id": "pron-F1-airport",
+    "title": "Airport words — Pearson, passport, luggage",
+    "focus": "Five F1 words for arrival day",
+    "target_sentence": "At Pearson, show your passport and take your luggage to the taxi.",
+    "target_words": ["Pearson", "passport", "luggage", "taxi", "gate"],
+    "ipa_hint": "/ˈpɪərsən/ · /ˈpæspɔrt/ · /ˈlʌɡɪdʒ/ · /ˈtæksi/ · /ɡeɪt/",
+    "tip": "Pearson has two syllables: PEAR-son. Passport stresses the first part.",
+    "level": "seed",
+    "is_premium": false,
+    "unit_id": "F1",
+    "sonolo_level": 1,
+    "is_published": true
+  }
+]

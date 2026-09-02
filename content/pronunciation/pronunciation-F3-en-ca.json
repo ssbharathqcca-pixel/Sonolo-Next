@@ -1,0 +1,16 @@
+[
+  {
+    "id": "pron-F3-grocery",
+    "title": "Grocery words — aisle, receipt, Presto",
+    "focus": "Five F3 words for the grocery run and transit",
+    "target_sentence": "The grocery aisle has rice; keep your receipt and tap Presto for the transfer.",
+    "target_words": ["grocery", "receipt", "aisle", "Presto", "transfer"],
+    "ipa_hint": "/ˈɡroʊsəri/ · /rɪˈsiːt/ · /aɪl/ · /ˈprɛstoʊ/ · /ˈtrænsfɜr/",
+    "tip": "Aisle is 'eye-l' — the s is silent. Receipt hides the p. Presto is the Ontario tap card; say it with a short e.",
+    "level": "sprout",
+    "is_premium": false,
+    "unit_id": "F3",
+    "sonolo_level": 2,
+    "is_published": true
+  }
+]

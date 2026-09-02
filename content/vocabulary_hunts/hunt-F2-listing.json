@@ -1,0 +1,11 @@
+{
+  "id": "hunt-F2-listing",
+  "unit_id": "F2",
+  "type": "vocabulary_hunt",
+  "language": "en-CA",
+  "level": 1,
+  "title": "Find housing words in the listing",
+  "reading_exercise_id": "reading-F2-listing",
+  "target_words": ["rent", "utilities", "deposit", "landlord", "lease"],
+  "is_published": true
+}

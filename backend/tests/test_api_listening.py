@@ -86,8 +86,9 @@ async def test_list_dialogues_shows_all_12_with_correct_lock_state(
 
     assert response.status_code == 200
     body = response.json()
-    assert len(body["dialogues"]) == 12
-    for i, dialogue in enumerate(body["dialogues"]):
+    gym = [d for d in body["dialogues"] if not d.get("unit_id")]
+    assert len(gym) == 12
+    for i, dialogue in enumerate(gym):
         assert "id" in dialogue
         assert "is_locked" in dialogue
         assert "listening_focus" in dialogue
@@ -281,10 +282,10 @@ async def test_evaluate_404_for_unknown_dialogue(
 
 async def test_listening_not_in_other_content_loaders() -> None:
     """Regression: the listening type stays isolated from other loaders."""
-    assert len(load_scenario_seeds()) == 155
-    assert len(load_vocabulary_seeds()) == 820
+    assert len(load_scenario_seeds()) == 161
+    assert len(load_vocabulary_seeds()) == 870
     assert len(load_microlesson_seeds()) == 24
-    assert len(load_pronunciation_drills()) == 12
+    assert len(load_pronunciation_drills()) == 15
     listening_ids = {d.id for d in load_listening_dialogues()}
     scenario_ids = {s.id for s in load_scenario_seeds()}
     assert listening_ids.isdisjoint(scenario_ids)

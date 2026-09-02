@@ -1,0 +1,322 @@
+[
+  {
+    "id": "vocab-F3-grocery",
+    "word": "grocery",
+    "phonetic": "/ˈɡroʊsəri/",
+    "translations": {"pa": "ਕਿਰਾਣਾ", "hi": "किराना", "zh": "杂货", "es": "comestibles"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "I need to stop at the grocery store after work.",
+      "The grocery on the corner has a good flyer this week."
+    ],
+    "fsrs_params": {"difficulty": 0.28, "stability": 3.2},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-aisle",
+    "word": "aisle",
+    "phonetic": "/aɪl/",
+    "translations": {"pa": "ਗਲਿਆਰਾ", "hi": "गलियारा", "zh": "过道", "es": "pasillo"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "Rice is in aisle 4, next to the dairy.",
+      "The s in aisle is silent — it sounds like 'I'll'."
+    ],
+    "fsrs_params": {"difficulty": 0.34, "stability": 3.0},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-receipt",
+    "word": "receipt",
+    "phonetic": "/rɪˈsiːt/",
+    "translations": {"pa": "ਰਸੀਦ", "hi": "रसीद", "zh": "收据", "es": "recibo"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "Keep your receipt in case you need to return the milk.",
+      "The cashier handed me the receipt and a bag."
+    ],
+    "fsrs_params": {"difficulty": 0.36, "stability": 2.8},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-checkout",
+    "word": "checkout",
+    "phonetic": "/ˈtʃɛkaʊt/",
+    "translations": {"pa": "ਚੈੱਕਆਉਟ", "hi": "चेकआउट", "zh": "结账处", "es": "caja"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "The checkout line is shorter at the far till.",
+      "Meet me at checkout after you grab the bread."
+    ],
+    "fsrs_params": {"difficulty": 0.3, "stability": 3.1},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-cashier",
+    "word": "cashier",
+    "phonetic": "/kæˈʃɪr/",
+    "translations": {"pa": "ਕੈਸ਼ੀਅਰ", "hi": "कैशियर", "zh": "收银员", "es": "cajero"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "The cashier asked if I had a points card.",
+      "Say thank you to the cashier when you take your bag."
+    ],
+    "fsrs_params": {"difficulty": 0.29, "stability": 3.2},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-discount",
+    "word": "discount",
+    "phonetic": "/ˈdɪskaʊnt/",
+    "translations": {"pa": "ਛੋਟ", "hi": "छूट", "zh": "折扣", "es": "descuento"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "There is a discount on frozen vegetables this week.",
+      "The flyer shows the discount beside the regular price."
+    ],
+    "fsrs_params": {"difficulty": 0.32, "stability": 3.0},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-sale",
+    "word": "sale",
+    "phonetic": "/seɪl/",
+    "translations": {"pa": "ਵਿਕਰੀ", "hi": "सेल", "zh": "特价", "es": "oferta"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "Bread is on sale — two loaves for five dollars.",
+      "I only buy chicken when it is on sale."
+    ],
+    "fsrs_params": {"difficulty": 0.22, "stability": 3.5},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-flyer",
+    "word": "flyer",
+    "phonetic": "/ˈflaɪər/",
+    "translations": {"pa": "ਫਲਾਇਰ", "hi": "फ्लायर", "zh": "促销单", "es": "folleto"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "Check the Save-On-Foods flyer before you shop.",
+      "The weekly flyer lists what is on sale."
+    ],
+    "fsrs_params": {"difficulty": 0.31, "stability": 3.1},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-cart",
+    "word": "cart",
+    "phonetic": "/kɑrt/",
+    "translations": {"pa": "ਗੱਡੀ", "hi": "कार्ट", "zh": "购物车", "es": "carrito"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "Put the milk in the cart last so it stays cold.",
+      "Please return the cart to the corral in the parking lot."
+    ],
+    "fsrs_params": {"difficulty": 0.24, "stability": 3.4},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-transfer",
+    "word": "transfer",
+    "phonetic": "/ˈtrænsfər/",
+    "translations": {"pa": "ਟ੍ਰਾਂਸਫਰ", "hi": "ट्रांसफर", "zh": "换乘", "es": "transbordo"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "A transfer is free if you tap Presto within two hours.",
+      "I need a transfer to the subway at Kipling."
+    ],
+    "fsrs_params": {"difficulty": 0.38, "stability": 2.7},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-fare",
+    "word": "fare",
+    "phonetic": "/fɛr/",
+    "translations": {"pa": "ਕਿਰਾਇਆ", "hi": "किराया", "zh": "车费", "es": "tarifa"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "Tap your card to pay the bus fare.",
+      "The fare includes a free transfer."
+    ],
+    "fsrs_params": {"difficulty": 0.33, "stability": 3.0},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-presto",
+    "word": "Presto",
+    "phonetic": "/ˈprɛstoʊ/",
+    "translations": {"pa": "ਪ੍ਰੈਸਟੋ ਕਾਰਡ", "hi": "प्रेस्टो कार्ड", "zh": "Presto卡", "es": "tarjeta Presto"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "Tap your Presto card on the reader by the driver.",
+      "Presto is the fare card in much of Ontario."
+    ],
+    "fsrs_params": {"difficulty": 0.35, "stability": 2.9},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-bus",
+    "word": "bus",
+    "phonetic": "/bʌs/",
+    "translations": {"pa": "ਬੱਸ", "hi": "बस", "zh": "公交车", "es": "autobús"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "The 44 bus goes to Kipling Station.",
+      "I will take the bus home after I shop."
+    ],
+    "fsrs_params": {"difficulty": 0.18, "stability": 3.8},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-subway",
+    "word": "subway",
+    "phonetic": "/ˈsʌbweɪ/",
+    "translations": {"pa": "ਸਬਵੇ", "hi": "सबवे", "zh": "地铁", "es": "metro"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "Take the subway downtown after you transfer.",
+      "The subway is faster than the bus at rush hour."
+    ],
+    "fsrs_params": {"difficulty": 0.26, "stability": 3.3},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-change",
+    "word": "change",
+    "phonetic": "/tʃeɪndʒ/",
+    "translations": {"pa": "ਖੁਲ੍ਹਾ", "hi": "खुला", "zh": "零钱", "es": "cambio"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "The cashier gave me two dollars in change.",
+      "I do not need a bag — please keep the change."
+    ],
+    "fsrs_params": {"difficulty": 0.27, "stability": 3.2},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-bag",
+    "word": "bag",
+    "phonetic": "/bæɡ/",
+    "translations": {"pa": "ਬੈਗ", "hi": "बैग", "zh": "袋子", "es": "bolsa"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "Can I have a bag for the frozen food?",
+      "Bring a reusable bag if you can."
+    ],
+    "fsrs_params": {"difficulty": 0.16, "stability": 3.9},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-fresh",
+    "word": "fresh",
+    "phonetic": "/frɛʃ/",
+    "translations": {"pa": "ਤਾਜ਼ਾ", "hi": "ताज़ा", "zh": "新鲜", "es": "fresco"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "The flyer has fresh apples on sale.",
+      "I want fresh bread, not the day-old loaf."
+    ],
+    "fsrs_params": {"difficulty": 0.2, "stability": 3.6},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-frozen",
+    "word": "frozen",
+    "phonetic": "/ˈfroʊzən/",
+    "translations": {"pa": "ਜੰਮਿਆ", "hi": "जमा हुआ", "zh": "冷冻", "es": "congelado"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "Frozen peas are in the freezer aisle.",
+      "Put frozen food in the cart last."
+    ],
+    "fsrs_params": {"difficulty": 0.25, "stability": 3.3},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-dairy",
+    "word": "dairy",
+    "phonetic": "/ˈdɛri/",
+    "translations": {"pa": "ਡੇਅਰੀ", "hi": "डेयरी", "zh": "乳制品", "es": "lácteos"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "Milk and yogurt are in the dairy aisle.",
+      "Rice is next to the dairy, in aisle 4."
+    ],
+    "fsrs_params": {"difficulty": 0.3, "stability": 3.1},
+    "is_published": true
+  },
+  {
+    "id": "vocab-F3-loaf",
+    "word": "loaf",
+    "phonetic": "/loʊf/",
+    "translations": {"pa": "ਪਾਉਰੋਟੀ", "hi": "पाव", "zh": "一条面包", "es": "barra de pan"},
+    "level": "sprout",
+    "sonolo_level": 2,
+    "unit_id": "F3",
+    "category": "daily_errands",
+    "example_sentences": [
+      "I need a loaf of whole wheat bread.",
+      "One loaf is enough for the week."
+    ],
+    "fsrs_params": {"difficulty": 0.29, "stability": 3.2},
+    "is_published": true
+  }
+]

@@ -1,0 +1,138 @@
+{
+  "id": "test-F3",
+  "unit_id": "F3",
+  "type": "unit_test",
+  "language": "en-CA",
+  "level": 2,
+  "time_limit_minutes": 15,
+  "is_published": true,
+  "pass_criteria": {
+    "overall_minimum": 70,
+    "per_skill_minimum": 60
+  },
+  "sections": {
+    "listening": {
+      "weight": 0.25,
+      "title": "Bus stop announcement",
+      "prompt": "A recorded TTC stop announcement. New material — not the Superstore dialogue.",
+      "questions": [
+        {
+          "id": "test-F3-listen-q1",
+          "type": "multiple_choice",
+          "question": "Which bus is arriving next?",
+          "options": ["The 35 Jane", "The 44 Kipling", "The 501 streetcar", "The 2 Bloor subway"],
+          "correct_answer": 1
+        },
+        {
+          "id": "test-F3-listen-q2",
+          "type": "multiple_choice",
+          "question": "Where should riders tap their fare card?",
+          "options": ["On the seat", "At the back door only", "On the Presto reader by the driver", "At the grocery store"],
+          "correct_answer": 2
+        },
+        {
+          "id": "test-F3-listen-q3",
+          "type": "multiple_choice",
+          "question": "Why does the driver mention a transfer?",
+          "options": [
+            "The bus is out of service",
+            "Riders going downtown need to change at Kipling station",
+            "Transfers are free candy",
+            "The subway is closed forever"
+          ],
+          "correct_answer": 1
+        },
+        {
+          "id": "test-F3-listen-q4",
+          "type": "true_false",
+          "question": "The next bus to Kipling leaves in five minutes.",
+          "options": ["True", "False"],
+          "correct_answer": 0
+        },
+        {
+          "id": "test-F3-listen-q5",
+          "type": "dictation",
+          "question": "Type the sentence you heard about the fare.",
+          "correct_answer": "Please tap your Presto card when you board."
+        }
+      ]
+    },
+    "reading": {
+      "weight": 0.25,
+      "title": "Saturday bus schedule",
+      "text_content": "Kipling Station — Saturday Service\n\nBus 44 to Kipling Station: 8:05, 8:20, 8:35, 8:50.\nLast downtown bus: 11:45 pm. After that, use the night bus.\nA transfer is free if you tap your Presto card within two hours.\nPlatform B is for westbound buses. Platform A is closed for repair this weekend.\nNeed milk or bread after your ride? The grocery store is a five-minute walk from the station.",
+      "questions": [
+        {
+          "id": "test-F3-read-q1",
+          "type": "multiple_choice",
+          "question": "What time is the last downtown bus?",
+          "options": ["8:05", "8:50", "11:45 pm", "2:00 am"],
+          "correct_answer": 2
+        },
+        {
+          "id": "test-F3-read-q2",
+          "type": "multiple_choice",
+          "question": "Which platform is closed this weekend?",
+          "options": ["Platform B", "Platform A", "Platform C", "All platforms"],
+          "correct_answer": 1
+        },
+        {
+          "id": "test-F3-read-q3",
+          "type": "multiple_choice",
+          "question": "How do you get a free transfer?",
+          "options": [
+            "Ask the grocery clerk",
+            "Tap your Presto card within two hours",
+            "Pay cash a second time",
+            "Wait on Platform A"
+          ],
+          "correct_answer": 1
+        },
+        {
+          "id": "test-F3-read-q4",
+          "type": "fill_blank",
+          "question": "Westbound buses use platform ____.",
+          "correct_answer": "B",
+          "accepted_answers": ["b", "Platform B", "platform b"]
+        },
+        {
+          "id": "test-F3-read-q5",
+          "type": "vocabulary_hunt",
+          "question": "Find these words in the schedule.",
+          "target_words": ["transfer", "Presto", "platform", "grocery", "station"]
+        }
+      ]
+    },
+    "speaking": {
+      "weight": 0.30,
+      "task": {
+        "id": "test-F3-speak-1",
+        "prompt": "You're at the bus stop. Ask someone how to get to the grocery store.",
+        "duration_seconds": 120,
+        "vocabulary_targets": ["grocery", "store", "bus", "stop", "please"]
+      }
+    },
+    "writing": {
+      "weight": 0.20,
+      "tasks": [
+        {
+          "id": "test-F3-write-1",
+          "type": "articles",
+          "prompt": "Complete each sentence with a, an, or the.",
+          "items": [
+            {"id": "a1", "sentence": "I need ___ apple.", "correct": "an"},
+            {"id": "a2", "sentence": "Where is ___ bus stop?", "correct": "the"},
+            {"id": "a3", "sentence": "Can I have ___ bag?", "correct": "a"}
+          ]
+        },
+        {
+          "id": "test-F3-write-2",
+          "type": "short_message",
+          "prompt": "Write a 3-sentence message to your roommate about what you bought.",
+          "min_sentences": 3,
+          "keywords": ["bought", "rice", "bread", "milk"]
+        }
+      ]
+    }
+  }
+}

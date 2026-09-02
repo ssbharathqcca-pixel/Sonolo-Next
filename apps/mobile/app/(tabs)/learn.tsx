@@ -1,10 +1,8 @@
 /**
- * Learn — today's daily quests with live progress (SN-017) plus the
- * live scenario library feeding the speaking loop. Premium scenarios
- * carry a lock overlay for free-tier callers and open the SN-026
- * paywall bottom sheet; unlocked ones jump straight into a session.
- * SN-030 adds a horizontal rail of tappable manifest pack cards; SN-039
- * makes them navigate to the Pack Detail screen.
+ * Learn — C8 Journey Map at the top, then existing content rails
+ * (packs, Culture Corner, Pronunciation Lab, Listening Gym, daily
+ * quests, scenario library). Premium scenarios still open SN-026
+ * paywall. The Journey Map is additive; rails are not replaced.
  */
 import { useCallback, useEffect, useState } from "react";
 import type { ComponentProps } from "react";
@@ -37,14 +35,18 @@ import {
 } from "lucide-react-native";
 
 import { GlassCard } from "../../src/components/GlassCard";
+import { JourneyMap } from "../../src/components/journey/JourneyMap";
 import { PaywallModal } from "../../src/components/PaywallModal";
 import {
+  fetchJourney,
   fetchListeningDialogues,
   fetchMicrolessons,
   fetchPacks,
   fetchPronunciationDrills,
   fetchTodayQuests,
   type ContentPack,
+  type JourneyMapData,
+  type JourneyUnit,
   type ListeningDialogueSummary,
   type MicrolessonSummary,
   type PronunciationDrillSummary,
@@ -419,6 +421,7 @@ export default function LearnScreen(): JSX.Element {
   const [listeningDialogues, setListeningDialogues] = useState<
     ListeningDialogueSummary[]
   >([]);
+  const [journey, setJourney] = useState<JourneyMapData | null>(null);
 
   const user = useAuthStore((state) => state.user);
   const scenarios = useScenarioStore((state) => state.scenarios);
@@ -578,15 +581,42 @@ export default function LearnScreen(): JSX.Element {
     }
   }, []);
 
+  const loadJourney = useCallback(async (): Promise<void> => {
+    try {
+      const payload = await fetchJourney();
+      setJourney(payload);
+    } catch {
+      // Journey Map is additive; rails stay usable without it.
+    }
+  }, []);
+
   useEffect(() => {
     void loadQuests();
   }, [loadQuests]);
 
+  useEffect(() => {
+    void loadJourney();
+  }, [loadJourney]);
+
   const onRefresh = useCallback(async (): Promise<void> => {
     setRefreshing(true);
-    await Promise.all([loadQuests(), loadScenarios(preferredLanguage)]);
+    await Promise.all([
+      loadQuests(),
+      loadScenarios(preferredLanguage),
+      loadJourney(),
+    ]);
     setRefreshing(false);
-  }, [loadQuests, loadScenarios, preferredLanguage]);
+  }, [loadQuests, loadScenarios, preferredLanguage, loadJourney]);
+
+  const handleUnitPress = useCallback(
+    (unit: JourneyUnit): void => {
+      if (unit.status === "locked") {
+        return;
+      }
+      router.push(`/unit/${unit.id}`);
+    },
+    [router],
+  );
 
   return (
     <ScrollView
@@ -611,6 +641,10 @@ export default function LearnScreen(): JSX.Element {
         Short, real-life scenarios. Speak them until they feel boring — that's
         fluency.
       </Text>
+
+      {journey !== null ? (
+        <JourneyMap journey={journey} onUnitPress={handleUnitPress} />
+      ) : null}
 
       {packs.length > 0 ? (
         <ScrollView

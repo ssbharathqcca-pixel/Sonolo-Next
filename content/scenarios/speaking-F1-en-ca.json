@@ -1,0 +1,52 @@
+[
+  {
+    "id": "speak-F1-officer",
+    "title": "Talk to the customs officer",
+    "description": "You have just landed at Pearson. Speak with the customs officer. Give your name, show your passport, and say your address.",
+    "category": "government",
+    "mode": "immigration",
+    "level": "seed",
+    "target_language": "en-CA",
+    "unit_id": "F1",
+    "sonolo_level": 1,
+    "system_prompt": "You are a calm Canadian customs officer at Toronto Pearson. Speak in very short Level-1 sentences. Ask for the passport and arrival form. Ask the learner's name and address in Canada. Welcome them. Correct gently by repeating the right sentence.",
+    "opening_line": "Good morning. Passport and form, please. What is your name?",
+    "expected_turns": 5,
+    "success_criteria": [
+      "User says their name",
+      "User mentions a passport or form",
+      "User gives an address or city",
+      "User says thank you or hello",
+      "User answers at least one officer question"
+    ],
+    "vocabulary_targets": ["passport", "form", "officer", "address", "Pearson", "welcome"],
+    "grammar_targets": ["I am / My name is"],
+    "cultural_notes": "Customs officers in Canada are usually polite and direct. Short answers are fine.",
+    "is_premium": false,
+    "is_published": true
+  },
+  {
+    "id": "speak-F1-sprint",
+    "title": "SpeakSprint: tell a taxi driver where to go",
+    "description": "SpeakSprint — 60 seconds. Tell a taxi driver you landed at Pearson and give an address. Use gate, luggage, or ticket if you can.",
+    "category": "government",
+    "mode": "immigration",
+    "level": "seed",
+    "target_language": "en-CA",
+    "unit_id": "F1",
+    "sonolo_level": 1,
+    "system_prompt": "You are a SpeakSprint coach for Foundation Level 1. The learner has 60 seconds to tell a taxi driver where to go from Pearson. Do not interrupt. After they finish, repeat one correct word.",
+    "opening_line": "You have 60 seconds. Tell the taxi driver where you landed and your address. Go ahead.",
+    "expected_turns": 1,
+    "success_criteria": [
+      "User speaks in a sustained turn",
+      "User mentions Pearson, taxi, or an address",
+      "User uses a greeting or please/thank you"
+    ],
+    "vocabulary_targets": ["taxi", "Pearson", "address", "luggage", "ticket"],
+    "grammar_targets": ["Numbers and addresses"],
+    "cultural_notes": "Taxi drivers at Pearson expect a street address. Please and thank you are enough politeness.",
+    "is_premium": false,
+    "is_published": true
+  }
+]

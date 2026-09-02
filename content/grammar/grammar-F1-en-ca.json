@@ -1,0 +1,36 @@
+{
+  "id": "grammar-F1-name-address",
+  "unit_id": "F1",
+  "type": "grammar_spotlight",
+  "language": "en-CA",
+  "level": 1,
+  "title": "My name is, and numbers",
+  "read_minutes": 3,
+  "grammar_targets": [
+    "I am / My name is",
+    "Numbers and addresses",
+    "This is / That is"
+  ],
+  "explanation": "On arrival day you say who you are and where you go. Use I am and My name is. Use numbers for gates, terminals, and addresses. Use This is / That is to point.",
+  "sections": [
+    {
+      "heading": "I am / My name is",
+      "text": "Say My name is Harpreet. Say I am from India. At customs, this is enough. Do not say I is or My name are."
+    },
+    {
+      "heading": "Numbers and addresses",
+      "text": "Gate B12, Terminal 1, 12 King Street. Say numbers clearly. My address is 12 King Street, Toronto."
+    },
+    {
+      "heading": "This is / That is",
+      "text": "This is my passport (in your hand). That is the taxi line (over there). This is my form."
+    }
+  ],
+  "examples": [
+    {"prompt": "____ name is Harpreet.", "answer": "My", "note": "My name is"},
+    {"prompt": "I ____ at Pearson.", "answer": "am", "note": "I am"},
+    {"prompt": "____ is my passport.", "answer": "This", "note": "This is for something near you"}
+  ],
+  "try_it": "At customs, say: My name is ____. My address is ____.",
+  "is_published": true
+}

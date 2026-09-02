@@ -54,6 +54,13 @@ def test_manifest_types_and_languages() -> None:
             "microlessons",
             "pronunciation",
             "listening",
+            "units",
+            "reading",
+            "writing",
+            "vocabulary_hunts",
+            "diagnostic",
+            "unit_tests",
+            "grammar",
         }
-        assert pack["language"] in {"en", "fr"}
+        assert pack["language"] in {"en", "fr", "en-CA", "fr-CA"}
         assert isinstance(pack["is_published"], bool)

@@ -1,0 +1,96 @@
+[
+  {
+    "id": "reading-F2-listing",
+    "unit_id": "F2",
+    "type": "reading",
+    "language": "en-CA",
+    "title": "Apartment listing",
+    "text_content": "Downtown listing: one-bedroom apartment. Rent is $1,500 a month. Utilities are extra. There is a kitchen and a small bedroom. Available June 1. Deposit is one month of rent. Email an inquiry to the landlord for a Saturday viewing. A roommate is okay. Bring photo ID. Send notice if you cannot come. The lease is twelve months.",
+    "text_source": "original",
+    "word_count": 58,
+    "level": 1,
+    "text_type": "form",
+    "questions": [
+      {
+        "id": "reading-F2-listing-q1",
+        "type": "multiple_choice",
+        "question": "How much is the rent?",
+        "options": ["$1,000", "$1,500", "$2,000", "Utilities only"],
+        "correct_answer": 1,
+        "explanation": "Rent is $1,500 a month.",
+        "skill_tested": "literal"
+      },
+      {
+        "id": "reading-F2-listing-q2",
+        "type": "true_false",
+        "question": "Utilities are included in the rent.",
+        "options": ["True", "False"],
+        "correct_answer": 1,
+        "explanation": "Utilities are extra.",
+        "skill_tested": "literal"
+      },
+      {
+        "id": "reading-F2-listing-q3",
+        "type": "fill_blank",
+        "question": "The deposit is one month of ____.",
+        "options": null,
+        "correct_answer": "rent",
+        "accepted_answers": ["the rent"],
+        "explanation": "Deposit is one month of rent.",
+        "skill_tested": "literal"
+      }
+    ],
+    "vocabulary_targets": ["downtown", "listing", "bedroom", "apartment", "rent", "utilities", "kitchen", "available", "deposit", "inquiry", "landlord", "viewing", "roommate", "notice", "lease"],
+    "grammar_targets": ["There is / There are"],
+    "cultural_note": "Canadian listings often say whether utilities are included. First and last month's rent is common.",
+    "reading_time_minutes": 1,
+    "is_published": true
+  },
+  {
+    "id": "reading-F2-lease",
+    "unit_id": "F2",
+    "type": "reading",
+    "language": "en-CA",
+    "title": "Lease clause",
+    "text_content": "This lease is for the downtown apartment. The tenant pays rent on the first day. There is a bedroom and a kitchen. The landlord can enter with 24-hour notice. A roommate needs written approval. Keep the deposit until you move out. Send an inquiry in writing. The listing address is on page one. A viewing does not mean the apartment is yours until you sign.",
+    "text_source": "original",
+    "word_count": 67,
+    "level": 1,
+    "text_type": "form",
+    "questions": [
+      {
+        "id": "reading-F2-lease-q1",
+        "type": "multiple_choice",
+        "question": "When is rent due?",
+        "options": ["The last day", "The first day", "After a viewing", "When utilities arrive"],
+        "correct_answer": 1,
+        "explanation": "Rent is on the first day.",
+        "skill_tested": "literal"
+      },
+      {
+        "id": "reading-F2-lease-q2",
+        "type": "true_false",
+        "question": "The landlord can enter with no notice.",
+        "options": ["True", "False"],
+        "correct_answer": 1,
+        "explanation": "The landlord needs 24-hour notice.",
+        "skill_tested": "literal"
+      },
+      {
+        "id": "reading-F2-lease-q3",
+        "type": "fill_blank",
+        "question": "A roommate needs written ____.",
+        "options": null,
+        "correct_answer": "approval",
+        "accepted_answers": ["written approval"],
+        "explanation": "A roommate needs written approval.",
+        "skill_tested": "literal"
+      }
+    ],
+    "vocabulary_targets": ["lease", "downtown", "apartment", "rent", "bedroom", "kitchen", "landlord", "notice", "roommate", "deposit", "inquiry", "listing", "viewing"],
+    "grammar_targets": ["I need / I want"],
+    "cultural_note": "Ontario leases usually require notice before a landlord enters.",
+    "reading_time_minutes": 1,
+    "is_published": true
+  }
+]

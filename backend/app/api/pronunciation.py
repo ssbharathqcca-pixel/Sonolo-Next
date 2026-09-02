@@ -18,11 +18,20 @@ import zlib
 from fastapi import APIRouter, Depends, HTTPException, status
 from pydantic import BaseModel
 
+from sqlalchemy.ext.asyncio import AsyncSession
+
 from app.api.dependencies import get_current_user
+from app.db.session import get_db
 from app.models.user import SUBSCRIPTION_PREMIUM, User
 from app.services.content_service import (
     PronunciationDrill,
+    get_pronunciation_drill,
+    gym_pronunciation_drills,
     load_pronunciation_drills,
+)
+from app.services.evidence_service import (
+    ACTIVITY_PRONUNCIATION_DRILL,
+    record_speaking_practice,
 )
 
 router = APIRouter(prefix="/pronunciation", tags=["pronunciation"])
@@ -154,7 +163,7 @@ async def list_drills(
     current_user: User = Depends(get_current_user),
 ) -> DrillListResponse:
     """Return every Pronunciation Lab drill with lock state (SN-049)."""
-    drills = load_pronunciation_drills()
+    drills = gym_pronunciation_drills()
     return DrillListResponse(
         drills=[
             DrillSummaryOut(
@@ -214,18 +223,36 @@ async def evaluate_drill(
     drill_id: str,
     payload: EvaluateRequest,
     current_user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
 ) -> EvaluateOut:
     """Score one take of a drill with the deterministic mock evaluator."""
-    drills = load_pronunciation_drills()
-    if not any(drill.id == drill_id for drill in drills):
+    drill = get_pronunciation_drill(drill_id)
+    if drill is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Pronunciation drill not found.",
         )
-    for drill in drills:
-        if drill.id == drill_id and _is_locked(drill, current_user):
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="This drill requires a premium subscription.",
-            )
-    return mock_phoneme_evaluation(drill_id, payload.duration_seconds)
+    if _is_locked(drill, current_user):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="This drill requires a premium subscription.",
+        )
+    result = mock_phoneme_evaluation(drill_id, payload.duration_seconds)
+    if drill.unit_id:
+        await record_speaking_practice(
+            db,
+            user_id=current_user.id,
+            unit_code=drill.unit_id,
+            content_id=drill.id,
+            activity_type=ACTIVITY_PRONUNCIATION_DRILL,
+            score=float(result.overall),
+            result_json={
+                "overall": result.overall,
+                "engine_version": result.engine_version,
+                "fluency_score": result.fluency_score,
+            },
+            sonolo_level=drill.sonolo_level,
+            fingerprint={"drill_id": drill.id, "overall": result.overall},
+        )
+        await db.commit()
+    return result

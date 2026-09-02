@@ -1,10 +1,7 @@
 /**
- * Progress — live XP/level/streak snapshot plus the six-dimension
- * skill radar (SN-017).
- *
- * Data sources per backend contract: GET /api/gamification/me carries
- * XP, level, streaks, and badges but no skill dimensions, so the radar
- * reads the six scores attached to GET /api/users/me (authStore.user).
+ * Progress — live XP/level/streak snapshot, six-dimension speaking
+ * radar (SN-017), CanadaReady™ scorecard (SN-048), plus C9 four-skill
+ * levels from GET /api/progress/skills (C2). Existing elements stay.
  */
 import { useCallback, useEffect, useState } from "react";
 import {
@@ -36,11 +33,15 @@ import {
 } from "lucide-react-native";
 
 import { GlassCard } from "../../src/components/GlassCard";
+import { FourSkillCard } from "../../src/components/progress/FourSkillCard";
+import { radarVertices } from "../../src/components/progress/radar";
 import {
   fetchGamificationSummary,
   fetchScorecard,
+  fetchSkillProgress,
   type GamificationSummary,
   type Scorecard,
+  type SkillProgress,
 } from "../../src/api/client";
 import { useAuthStore } from "../../src/stores/authStore";
 import { colors } from "../../src/theme/colors";
@@ -59,25 +60,7 @@ const DIMENSIONS = [
   { key: "task_completion_score", label: "Task" },
 ] as const;
 
-function clampScore(value: number): number {
-  return Math.min(100, Math.max(0, value));
-}
-
-/** Hexagon vertices for the given 0–100 values, starting at 12 o'clock. */
-export function radarVertices(
-  values: number[],
-  center: number,
-  radius: number,
-): Array<{ x: number; y: number }> {
-  return values.map((value, index) => {
-    const angle = (Math.PI * 2 * index) / values.length - Math.PI / 2;
-    const scaled = (clampScore(value) / 100) * radius;
-    return {
-      x: center + scaled * Math.cos(angle),
-      y: center + scaled * Math.sin(angle),
-    };
-  });
-}
+export { radarVertices };
 
 function polygonPoints(values: number[]): string {
   return radarVertices(values, RADAR_CENTER, RADAR_RADIUS)
@@ -242,6 +225,10 @@ export default function ProgressScreen(): JSX.Element {
   // SN-048: the scorecard entry needs the live badge + score; degrade
   // silently (entry stays tappable) when the fetch fails.
   const [scorecard, setScorecard] = useState<Scorecard | null>(null);
+  const [skillProgress, setSkillProgress] = useState<SkillProgress | null>(
+    null,
+  );
+  const [skillError, setSkillError] = useState(false);
 
   const loadSummary = useCallback(async (): Promise<void> => {
     try {
@@ -274,6 +261,21 @@ export default function ProgressScreen(): JSX.Element {
     };
   }, []);
 
+  const loadSkillProgress = useCallback(async (): Promise<void> => {
+    try {
+      const payload = await fetchSkillProgress();
+      setSkillProgress(payload);
+      setSkillError(false);
+    } catch {
+      // Four-skill block is additive; XP / streak / badges / scorecard stay.
+      setSkillError(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    void loadSkillProgress();
+  }, [loadSkillProgress]);
+
   const onRefresh = useCallback(async (): Promise<void> => {
     setRefreshing(true);
     await Promise.all([
@@ -281,9 +283,10 @@ export default function ProgressScreen(): JSX.Element {
       fetchScorecard()
         .then(setScorecard)
         .catch(() => {}),
+      loadSkillProgress(),
     ]);
     setRefreshing(false);
-  }, [loadSummary]);
+  }, [loadSummary, loadSkillProgress]);
 
   const skills = user?.skills ?? null;
   const radarValues = skills === null
@@ -325,6 +328,29 @@ export default function ProgressScreen(): JSX.Element {
         scorecard={scorecard}
         onPress={() => router.push("/scorecard")}
       />
+
+      {skillProgress !== null ? (
+        <FourSkillCard progress={skillProgress} />
+      ) : null}
+
+      {skillError && skillProgress === null ? (
+        <GlassCard style={styles.skillErrorCard}>
+          <Text style={styles.skillErrorText}>
+            Skill levels need a connection — the rest of your progress is still
+            here.
+          </Text>
+          <Pressable
+            style={styles.retryButton}
+            accessibilityLabel="Retry loading skill levels"
+            onPress={() => {
+              void loadSkillProgress();
+            }}
+          >
+            <RefreshCw color={colors.auroraTeal} size={16} />
+            <Text style={styles.retryText}>Try again</Text>
+          </Pressable>
+        </GlassCard>
+      ) : null}
 
       {isLoading ? (
         <ActivityIndicator color={colors.auroraTeal} style={styles.spinner} />
@@ -494,6 +520,17 @@ const styles = StyleSheet.create({
   },
   errorText: {
     color: colors.error,
+    fontSize: 13,
+    lineHeight: 18,
+    textAlign: "center",
+  },
+  skillErrorCard: {
+    alignItems: "center",
+    gap: 10,
+    paddingVertical: 16,
+  },
+  skillErrorText: {
+    color: colors.textTertiary,
     fontSize: 13,
     lineHeight: 18,
     textAlign: "center",

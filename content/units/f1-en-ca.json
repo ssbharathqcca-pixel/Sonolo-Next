@@ -1,0 +1,80 @@
+{
+  "id": "F1",
+  "band": "foundation",
+  "level_target": 1,
+  "sort_order": 1,
+  "language": "en-CA",
+  "title": "Arrival Day",
+  "story_chapter": "Harpreet lands at Pearson",
+  "theme": "airport_arrival",
+  "icon": "✈️",
+  "vocabulary_targets": [
+    "passport",
+    "gate",
+    "arrival",
+    "customs",
+    "taxi",
+    "terminal",
+    "luggage",
+    "flight",
+    "officer",
+    "address",
+    "form",
+    "welcome",
+    "Pearson",
+    "landing",
+    "ticket"
+  ],
+  "grammar_targets": [
+    "I am / My name is",
+    "Numbers and addresses",
+    "This is / That is"
+  ],
+  "cultural_context": "Most newcomers to Ontario land at Toronto Pearson Airport. You fill an arrival card, speak with a customs officer, then take a taxi or train from the terminal.",
+  "vocab_primer_ids": [
+    "vocab-F1-passport",
+    "vocab-F1-gate",
+    "vocab-F1-arrival",
+    "vocab-F1-customs",
+    "vocab-F1-taxi",
+    "vocab-F1-terminal",
+    "vocab-F1-luggage",
+    "vocab-F1-flight",
+    "vocab-F1-officer",
+    "vocab-F1-address",
+    "vocab-F1-form",
+    "vocab-F1-welcome",
+    "vocab-F1-pearson",
+    "vocab-F1-landing",
+    "vocab-F1-ticket"
+  ],
+  "listening_ids": [
+    "listen-F1-announcement",
+    "listen-F1-customs",
+    "listen-F1-taxi"
+  ],
+  "reading_ids": [
+    "reading-F1-arrival-card",
+    "reading-F1-airport-signs"
+  ],
+  "reading_required_activities": [
+    {"id": "reading-F1-arrival-card", "type": "reading_exercise"},
+    {"id": "reading-F1-airport-signs", "type": "reading_exercise"},
+    {"id": "hunt-F1-arrival-card", "type": "vocabulary_hunt"}
+  ],
+  "reading_optional_activities": [],
+  "speaking_ids": [
+    "speak-F1-officer",
+    "speak-F1-sprint",
+    "pron-F1-airport"
+  ],
+  "writing_ids": [
+    "writing-F1-sentence-builder",
+    "writing-F1-address",
+    "writing-F1-error-fix"
+  ],
+  "grammar_spotlight_id": "grammar-F1-name-address",
+  "unit_test_id": "test-F1",
+  "prerequisites": [],
+  "is_published": true
+}
